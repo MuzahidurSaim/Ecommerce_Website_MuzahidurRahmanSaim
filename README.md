@@ -57,3 +57,17 @@
 
 # part-15
 ## section-01
+    - create a new table named --> products
+## section-02
+    - create a new column named --> product_id [int, primary key, auto increment]
+    - create a new column named --> product_title [varchar 100]
+    - create a new column named --> product_description [varchar 255]
+    - create a new column named --> product_keywords [varchar 255]
+    - create a new column named --> category_title [varchar 100]
+    - create a new column named --> brand_title [varchar 100]
+    - create a new column named --> product_image1 [varchar 255]
+    - create a new column named --> product_image2 [varchar 255]
+    - create a new column named --> product_image3 [varchar 255]
+    - create a new column named --> product_price [varchar 100]
+    - create a new column named --> product_date [timestamp]
+    - create a new column named --> product_status [varchar 100]
