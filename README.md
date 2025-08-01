@@ -71,3 +71,13 @@
     - create a new column named --> product_price [varchar 100]
     - create a new column named --> product_date [timestamp]
     - create a new column named --> product_status [varchar 100]
+
+# part-16
+## section-01
+    - go to the file --> admin_area/insert_product.php
+    - make php changes at the top to insert values in the database from the "Insert Product" page-->
+    - create a new folder inside the directory --> admin_area
+    - name the directory as --> product_images
+
+# part-17
+## section-01
