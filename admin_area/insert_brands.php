@@ -26,6 +26,8 @@
 
 ?>
 
+<h2 class="text-center">Insert Brands</h2>
+
 <form action="" method="post" class="mb-2">
     <div class="input-group mb-2 w-90">
         <span class="input-group-text bg-info" id="basic-addon1"><i class="fa-solid fa-receipt"></i></span>

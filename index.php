@@ -1,3 +1,9 @@
+<?php
+
+    include('includes/connect.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,6 +166,17 @@
                     <li class="nav-item bg-info">
                         <a href="#" class="nav-link text-light"><h4>Delivery Brands</h4></a>
                     </li>
+
+                    <?php
+
+                        $select_brands="Select * from `brands`";
+                        $result_brands=mysqli_query($con, $select_brands);
+
+                        $row_data=mysqli_fetch_assoc($result_brands);
+                        echo $row_data['brand_title'];
+
+                    ?>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link text-light">Brand1</a>
                     </li>

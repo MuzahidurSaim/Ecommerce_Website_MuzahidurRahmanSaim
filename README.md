@@ -34,4 +34,8 @@
 
 # part-12
 ## section-01
-    -
+    - display category and brand values in the home page (root) --> index.php
+    - make php changes in "fourth child" -> "side nav" -> "brands to be displyed" -> "Delivery Brands" --> index.php
+    - connect the database (connect.php) file at the top --> index.php
+## section-02
+    - again make changes in the --> Delivery Brands (part-12 6:55)
