@@ -22,3 +22,12 @@
     - change the file to not show the connection message everytime --> connect.php
 
 # part-10
+## section-01
+    - how to insert categories --> insert_categories.php
+    - change the --> Insert Categories <-- part
+## section-02
+    - how to insert distinct values to the database --> insert_categories.php <-- in the php part
+
+# part-11
+## section-01
+    - how to insert brands
