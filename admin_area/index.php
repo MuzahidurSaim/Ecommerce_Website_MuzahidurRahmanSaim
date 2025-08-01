@@ -10,6 +10,12 @@
 
     <!-- css file -->
     <link rel = "stylesheet" href = "../style.css">
+    <style>
+        .footer {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -59,6 +65,10 @@
             </div>
         </div>
 
+        <!-- last child -->
+        <div class = "bg-info p-3 text-center footer">
+            <p>All rights reserved © Designed by Saim-2025</p>
+        </div>
     </div>
 
     <!-- bootstrap js link -->
