@@ -45,16 +45,16 @@
                     <p class="text-light text-center">Admin Name</p>
                 </div>
                 <div class="button text-center">
-                    <button class="my-3"><a href="" class="nav-link text-light bg-info m-1">Insert Products</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1">View Products</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1">Insert Categories</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1">View Categories</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1">Insert Brands</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1">View Brands</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1">All Orders</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1">All Payments</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1">List Users</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1">Logout</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">Insert Products</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">View Products</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">Insert Categories</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">View Categories</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">Insert Brands</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">View Brands</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">All Orders</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">All Payments</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">List Users</a></button>
+                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">Logout</a></button>
                 </div>
             </div>
         </div>
