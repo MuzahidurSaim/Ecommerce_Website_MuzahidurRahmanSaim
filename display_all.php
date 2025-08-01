@@ -94,7 +94,7 @@
                     <!-- fetching products -->
                     <?php
 
-                        getProducts();
+                        getAllProducts();
                         getUniqueCategories();
                         getUniqueBrands();
 

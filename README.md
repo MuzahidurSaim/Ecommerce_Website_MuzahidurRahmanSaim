@@ -102,3 +102,17 @@
 
 # part-20
 ## section-01
+    - go to the root --> index.php
+    - modify "first child" -> "navbar" --> Home and Products <-- page
+## section-02
+    - create a new file in the root directory named --> display_all.php
+    - create a new file in the "includes" directory --> footer.php
+    - write the footer div code
+    - include this footer.php file to all the pages's "footer" section
+## section-03
+    - to show the all products go to the --> display_all.php
+    - copy paste the entire code in this file from the root --> index.php
+## section-04
+    - go to the --> functions/common_function.php
+    - create a new function to show all the products without any limits --> getAllProducts()
+    - add this function instead of "getProducts()" inside --> display_all.php
