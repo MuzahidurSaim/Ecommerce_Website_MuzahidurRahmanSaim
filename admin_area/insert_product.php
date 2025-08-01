@@ -98,7 +98,7 @@
                             $category_title=$row['category_title'];
                             $category_id=$row['category_id'];
 
-                            echo "<option value='$category_title'>$category_title</option>";
+                            echo "<option value='$category_id'>$category_title</option>";
                         }
 
                     ?>
@@ -120,7 +120,7 @@
                             $brand_title=$row['brand_title'];
                             $brand_id=$row['brand_id'];
 
-                            echo "<option value='$brand_title'>$brand_title</option>";
+                            echo "<option value='$brand_id'>$brand_title</option>";
                         }
 
                     ?>
