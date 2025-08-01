@@ -85,5 +85,15 @@
     - make php changes in the "fourth child" -> "products" --> fetching products
 
 # part-18
+## section-01
+    - create common functions to reduce the coding time
+    - create a new folder in the root directory named --> functions
+    - create a new file inside that directory named --> common_function.php
 ## section-02
-    -
+    - modify the php changes in --> functions/common_function.php
+    - include this function php file at the top of root --> index.php
+    - create functions --> getProducts(), getBrands(), getCategories()
+
+# part-19
+## section-01
+    - 
