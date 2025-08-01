@@ -50,3 +50,10 @@
 
 # part-14
 ## section-01
+    - connect the database with the file --> admin_area/insert_product.php
+## section-02
+    - make php changes to show the database's categories --> "categories" <-- go inside it
+    - make php changes to show the database's brands --> "brands" <-- go inside it
+
+# part-15
+## section-01

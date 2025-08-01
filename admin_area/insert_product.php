@@ -1,3 +1,10 @@
+<?php
+
+    /* connect the database to this php file */
+    include('../includes/connect.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,10 +49,21 @@
             <div class="form-outline mb-4 w-50 m-auto">
                 <select name="product_category" id="" class="form-select">
                     <option value="">Select a Category</option>
-                    <option value="">Category1</option>
-                    <option value="">Category2</option>
-                    <option value="">Category3</option>
-                    <option value="">Category4</option>
+
+                    <?php
+
+                        $select_query="Select * from `categories`";
+                        $result_query=mysqli_query($con, $select_query);
+
+                        while($row=mysqli_fetch_assoc($result_query)) {
+                            $category_title=$row['category_title'];
+                            $category_id=$row['category_id'];
+
+                            echo "<option value='$category_title'>$category_title</option>";
+                        }
+
+                    ?>
+
                 </select>
             </div>
 
@@ -53,10 +71,21 @@
             <div class="form-outline mb-4 w-50 m-auto">
                 <select name="product_brand" id="" class="form-select">
                     <option value="">Select a Brand</option>
-                    <option value="">Brand1</option>
-                    <option value="">Brand2</option>
-                    <option value="">Brand3</option>
-                    <option value="">Brand4</option>
+
+                    <?php
+
+                        $select_query="Select * from `brands`";
+                        $result_query=mysqli_query($con, $select_query);
+
+                        while($row=mysqli_fetch_assoc($result_query)) {
+                            $brand_title=$row['brand_title'];
+                            $brand_id=$row['brand_id'];
+
+                            echo "<option value='$brand_title'>$brand_title</option>";
+                        }
+
+                    ?>
+
                 </select>
             </div>
 
