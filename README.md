@@ -30,4 +30,8 @@
 
 # part-11
 ## section-01
-    - how to insert brands
+    - how to insert distinct brand values to the database --> insert_brands.php <-- do the same as the part-10
+
+# part-12
+## section-01
+    -
