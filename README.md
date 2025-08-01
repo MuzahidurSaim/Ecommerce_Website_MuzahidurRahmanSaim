@@ -42,4 +42,11 @@
 
 # part-13
 ## section-01
-    -
+    - create a new file inside the directory --> admin_area
+    - name the file as --> insert_product.php
+    - add the page link to the "third child" -> "Insert Products" link --> admin_area/index.php
+## section-02
+    - edit the file --> admin_area/insert_product.php
+
+# part-14
+## section-01
