@@ -32,7 +32,7 @@
             move_uploaded_file($temp_image3, "./product_images/$product_image3");
 
             // insert query
-            $insert_products="insert into `products` (product_title, product_description, product_keywords, category_title, brand_title, product_image1, product_image2, product_image3, product_price, product_date, product_status) values ('$product_title', '$product_description', '$product_keywords', '$product_category', '$product_brand', '$product_image1', '$product_image2', '$product_image3', '$product_price', NOW(), '$product_status')";
+            $insert_products="insert into `products` (product_title, product_description, product_keywords, category_id, brand_id, product_image1, product_image2, product_image3, product_price, product_date, product_status) values ('$product_title', '$product_description', '$product_keywords', '$product_category', '$product_brand', '$product_image1', '$product_image2', '$product_image3', '$product_price', NOW(), '$product_status')";
 
             $result_query=mysqli_query($con, $insert_products);
             if($result_query) {

@@ -63,8 +63,8 @@
     - create a new column named --> product_title [varchar 100]
     - create a new column named --> product_description [varchar 255]
     - create a new column named --> product_keywords [varchar 255]
-    - create a new column named --> category_title [varchar 100]
-    - create a new column named --> brand_title [varchar 100]
+    - create a new column named --> category_id [int]
+    - create a new column named --> brand_id [int]
     - create a new column named --> product_image1 [varchar 255]
     - create a new column named --> product_image2 [varchar 255]
     - create a new column named --> product_image3 [varchar 255]
@@ -81,4 +81,9 @@
 
 # part-17
 ## section-01
-    - 
+    - go to the root file --> index.php <-- to show the values in the "home page" from the "database"
+    - make php changes in the "fourth child" -> "products" --> fetching products
+
+# part-18
+## section-02
+    -
