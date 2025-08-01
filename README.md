@@ -96,4 +96,9 @@
 
 # part-19
 ## section-01
-    - 
+    - go to --> functions/common_function.php
+    - modify getProducts() --> so that when choosing a brand/category it will only show that brand/category page
+    - to do that add two more functions --> getUniqueCategories() and getUniqueBrands() <-- after the getProducts() inside the root index.php file
+
+# part-20
+## section-01

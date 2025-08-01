@@ -95,6 +95,8 @@
                     <?php
 
                         getProducts();
+                        getUniqueCategories();
+                        getUniqueBrands();
 
                     ?>
 
