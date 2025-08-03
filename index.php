@@ -136,10 +136,18 @@
             </div>
         </div>
 
+        <!-- calling the cart function -->
+        <?php
+
+            cart();
+
+        ?>
+
         <!-- include footer file -->
         <?php
             include("./includes/footer.php")
         ?>
+
     </div>
 
 

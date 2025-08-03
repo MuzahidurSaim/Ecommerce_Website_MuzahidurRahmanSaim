@@ -147,6 +147,7 @@
     - go to the --> functions/common_function.php
     - create a new function --> viewDetails()
     - same as the getProducts() except this is under a new if condition to get the product value and few more changes in the output
+    - change the "view more" button to "Go Home" and link it to the page --> index.php
 ## sectino-02
     - go to the --> product_details.php
     - trasfer the the part from "fourth child" > "products" > "main product's card" and "related images" to the --> viewDetails()
@@ -165,4 +166,11 @@
     - we have to get the ip address for "cart" page since, there will be many orders from many users at the same time
 
 # part-25
+## section-01
+    - go to --> functions/common_function.php
+    - create a new function --> cart()
+    - change all the "Add to Cart" --> link it to the "add_to_cart" command of the index.php file/page
+    - call the function "cart()" anywhere from the --> index.php
+
+# part-26
 ## section-01

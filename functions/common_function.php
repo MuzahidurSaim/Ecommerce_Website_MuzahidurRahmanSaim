@@ -29,7 +29,7 @@
                                 <div class='card-body'>
                                     <h5 class='card-title'>$product_title</h5>
                                     <p class='card-text'>$product_description</p>
-                                    <a href='#' class='btn btn-info'>Add to cart</a>
+                                    <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                                     <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                                 <div class='card-body'>
                                     <h5 class='card-title'>$product_title</h5>
                                     <p class='card-text'>$product_description</p>
-                                    <a href='#' class='btn btn-info'>Add to cart</a>
+                                    <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                                     <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                             <div class='card-body'>
                                 <h5 class='card-title'>$product_title</h5>
                                 <p class='card-text'>$product_description</p>
-                                <a href='#' class='btn btn-info'>Add to cart</a>
+                                <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                                 <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                             <div class='card-body'>
                                 <h5 class='card-title'>$product_title</h5>
                                 <p class='card-text'>$product_description</p>
-                                <a href='#' class='btn btn-info'>Add to cart</a>
+                                <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                                 <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
                             </div>
                         </div>
@@ -220,7 +220,7 @@
                             <div class='card-body'>
                                 <h5 class='card-title'>$product_title</h5>
                                 <p class='card-text'>$product_description</p>
-                                <a href='#' class='btn btn-info'>Add to cart</a>
+                                <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
                                 <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
                             </div>
                         </div>
@@ -261,8 +261,8 @@
                                     <div class='card-body'>
                                         <h5 class='card-title'>$product_title</h5>
                                         <p class='card-text'>$product_description</p>
-                                        <a href='#' class='btn btn-info'>Add to cart</a>
-                                        <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View more</a>
+                                        <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>Add to cart</a>
+                                        <a href='index.php' class='btn btn-secondary'>Go Home</a>
                                     </div>
                                 </div>
                             </div>
@@ -300,7 +300,28 @@
         }
         return $ip;
     }
-    echo 'User IP Address ---> ' . getUserIpAddress();
 
+    // function to add to cart
+    function cart() {
+        if(isset($_GET['add_to_cart'])) {
+            global $con;
+
+            $ip=getUserIpAddress();
+            $product_id=$_GET['add_to_cart'];
+            $select_query="Select * from `cart_details` where ip_address='$ip' and product_id=$product_id";
+            $result_query=mysqli_query($con, $select_query);
+
+            $num_of_rows=mysqli_num_rows($result_query);
+            if($num_of_rows>0) {
+                echo "<script>alert('This item is already present inside cart');</script>";
+                echo "<script>window.open('index.php', '_self');</script>";
+            } else {
+                $insert_query="Insert into `cart_details` (product_id, ip_address, quantity) values ($product_id, '$ip', 0)";
+                $result_query=mysqli_query($con, $insert_query);
+                echo "<script>alert('Item is added to cart');</script>";
+                echo "<script>window.open('index.php', '_self');</script>";
+            }
+        }
+    }
 
 ?>
