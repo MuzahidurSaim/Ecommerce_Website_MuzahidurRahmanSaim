@@ -132,7 +132,6 @@
 
 # part-22
 ## section-01
-    - more details of a product
     - go to -> "functions/common_function.php" and change all the links for the page --> view more
     - link the "product_details.php" file/page to this --> view more <-- button
 ## section-02
@@ -144,4 +143,13 @@
     - we'll make it dynamic in the next part
 
 # part-23
+## section-01
+    - go to the --> functions/common_function.php
+    - create a new function --> viewDetails()
+    - same as the getProducts() except this is under a new if condition to get the product value and few more changes in the output
+## sectino-02
+    - go to the --> product_details.php
+    - trasfer the the part from "fourth child" > "products" > "main product's card" and "related images" to the --> viewDetails()
+
+# part-24
 ## section-01
