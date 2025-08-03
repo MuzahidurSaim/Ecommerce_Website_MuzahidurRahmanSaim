@@ -153,3 +153,16 @@
 
 # part-24
 ## section-01
+    - create a new table --> cart_details
+    - create a new column --> product_id [int, auto increment, primary key]
+    - create a new collumn --> ip_address [varchar, 255]
+    - create a new column --> quantity [int, 100]
+## section-02
+    - copy the function for getting ip address in php --> from online
+    - go to the --> functions/common_function.php
+    - create a new function --> getUserIpAddress()
+    - paste the function code copied from online
+    - we have to get the ip address for "cart" page since, there will be many orders from many users at the same time
+
+# part-25
+## section-01
