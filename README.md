@@ -116,3 +116,20 @@
     - go to the --> functions/common_function.php
     - create a new function to show all the products without any limits --> getAllProducts()
     - add this function instead of "getProducts()" inside --> display_all.php
+
+# part-21
+## section-01
+    - search query
+    - go to root --> index.php
+    - go to "first child" > "navbar" > "Search"
+    - replace the search "button" to --> "input" field
+## section-02
+    - create a new file in the root directory --> search_product.php
+    - copy paste the entire code to it from root --> index.php
+    - make php changes to the "fourth child" > "products" > "fetching products" --> replace getProducts() with searchProducts()
+## section-03
+    - go to the --> functions/common_function.php
+    - create a new function same as getProducts() with minor change with the query and if conditionn --> searchProducts()
+
+# part-22
+## section-01

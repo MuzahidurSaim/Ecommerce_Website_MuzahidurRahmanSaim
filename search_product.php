@@ -58,9 +58,9 @@
                         </li>
                     </ul>
 
-                    <form class="d-flex" role="search" action="search_product.php" method="get">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
-                        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
+                    <form class="d-flex" role="search" action="" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data"/>
+                        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product"/>
                     </form>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                     <!-- fetching products -->
                     <?php
 
-                        getProducts();
+                        searchProducts();
                         getUniqueCategories();
                         getUniqueBrands();
 
