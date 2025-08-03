@@ -119,7 +119,6 @@
 
 # part-21
 ## section-01
-    - search query
     - go to root --> index.php
     - go to "first child" > "navbar" > "Search"
     - replace the search "button" to --> "input" field
@@ -132,4 +131,17 @@
     - create a new function same as getProducts() with minor change with the query and if conditionn --> searchProducts()
 
 # part-22
+## section-01
+    - more details of a product
+    - go to -> "functions/common_function.php" and change all the links for the page --> view more
+    - link the "product_details.php" file/page to this --> view more <-- button
+## section-02
+    - create a new file in the root directory --> product_details.php
+    - copy paste the entire code to it from --> index.php
+    - remove the "getProducts()" function from --> fetching products <-- section
+## section-03
+    - above the "fetching products" section create the layout for the --> view more <-- page
+    - we'll make it dynamic in the next part
+
+# part-23
 ## section-01
