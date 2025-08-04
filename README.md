@@ -155,7 +155,7 @@
 # part-24
 ## section-01
     - create a new table --> cart_details
-    - create a new column --> product_id [int, auto increment, primary key]
+    - create a new column --> product_id [int, primary key]
     - create a new collumn --> ip_address [varchar, 255]
     - create a new column --> quantity [int, 100]
 ## section-02
@@ -179,4 +179,8 @@
     - change the cart number to dynamic > "first child" > "navbar" > "sup" --> calling the "cartItems()" function in "index.php", "product_details.php", "search_product.php", "display_all.php"
 
 # part-27
+## section-01
+    - add the product price in every function after the <p> tag in the --> functions/common_function.php
+
+# part-28
 ## section-01
