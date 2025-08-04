@@ -200,3 +200,8 @@
 
 # part-30
 ## section-01
+    - go to the --> cart.php
+    - make php changes inside the --> "fourth child" ~ "tbody"
+
+# part-31
+## section-01

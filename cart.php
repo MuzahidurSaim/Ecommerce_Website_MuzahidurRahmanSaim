@@ -20,6 +20,13 @@
 
     <!-- css file -->
     <link rel = "stylesheet" href = "style.css">
+    <style class="">
+        .cart_img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+    </style>
 </head>
 <body>
 
@@ -87,33 +94,57 @@
                             <th>Quantity</th>
                             <th>Total Price</th>
                             <th>Remove</th>
-                            <th>Operations</th>
+                            <th colspan="2">Operations</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>Apple</td>
-                            <td><img src="./images/apple.jpg" alt=""></td>
-                            <td><input type="text" name="" id=""></td>
-                            <td>9000</td>
-                            <td><input type="checkbox"></td>
-                            <td>
-                                <p>Update</p>
-                                <p>Remove</p>
-                            </td>
-                        </tr>
+                        <!-- Fetch cart items and product details -->
+                        <?php
+
+                            global $con;
+                            $ip=getUserIpAddress();
+                            $total=0;
+                            $cart_query="SELECT * FROM `cart_details` WHERE ip_address='$ip'";
+                            $result=mysqli_query($con, $cart_query);
+
+                            while($row=mysqli_fetch_array($result)) {
+                                $product_id=$row['product_id'];
+                                $select_products="SELECT * FROM `products` WHERE product_id='$product_id'";
+                                $result_products=mysqli_query($con, $select_products);
+
+                                while($row_product_price=mysqli_fetch_array($result_products)) {
+                                    $product_price=array($row_product_price['product_price']);
+                                    $price_table=$row_product_price['product_price'];
+                                    $product_title=$row_product_price['product_title'];
+                                    $product_image1=$row_product_price['product_image1'];
+                                    $product_values=array_sum($product_price);
+                                    $total+=$product_values;
+
+                                    echo "
+                                        <tr>
+                                            <td>$product_title</td>
+                                            <td><img src='./admin_area/product_images/$product_image1' alt='' class='cart_img'></td>
+                                            <td><input type='text' name='' id='' class='form-input w-50'></td>
+                                            <td>$price_table/-</td>
+                                            <td><input type='checkbox'></td>
+                                            <td>
+                                                <button class='bg-info px-3 py-2 border-0 mx-3'>Update</button>
+                                                <button class='bg-info px-3 py-2 border-0 mx-3'>Remove</button>
+                                            </td>
+                                        </tr>
+                                    ";
+                                }
+                            }
+
+                        ?>
                     </tbody>
                 </table>
 
                 <div class="d-flex mb-3">
-                    <h4 class="px-3">Subtotal: <strong class="text-info">5000/-</strong></h4>
-                    <a href="index.php" class="">
-                        <button class="bg-info px-3 py-2 border-0 mx-3">Continue Shopping</button>
-                    </a>
-                    <a href="#" class="">
-                        <button class="bg-secondary px-3 py-2 border-0 text-light">Checkout</button>
-                    </a>
+                    <h4 class="px-3">Subtotal: <strong class="text-info"><?= $total ?>/-</strong></h4>
+                    <a href="index.php" class=""><button class="bg-info px-3 py-2 border-0 mx-3">Continue Shopping</button></a>
+                    <a href="#" class=""><button class="bg-secondary px-3 py-2 border-0 text-light">Checkout</button></a>
                 </div>
             </div>
         </div>
