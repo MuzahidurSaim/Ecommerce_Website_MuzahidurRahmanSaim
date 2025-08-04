@@ -191,3 +191,12 @@
 
 # part-29
 ## section-01
+    - create a new file in the root directory --> cart.php
+    - go to "index.php", "product_details.php", "search_product.php", "display_all.php" --> and change the link to this page in the "cartItems()" part
+    - copy paste here the entire code from --> index.php
+## section-02
+    - remove the "total price" and "form" option from --> "cart.php" ~ "first child" ~ "navbar"
+    - replace the parts of "fourth child" with the cart page "table" layout inside the --> cart.php
+
+# part-30
+## section-01

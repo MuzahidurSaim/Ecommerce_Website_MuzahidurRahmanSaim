@@ -53,15 +53,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cartItems(); ?></sup></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Total Price: <?php cartTotalPrice(); ?>/-</a>
-                        </li>
                     </ul>
-
-                    <form class="d-flex" role="search" action="" method="get">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data"/>
-                        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product"/>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -85,61 +77,59 @@
         </div>
 
         <!-- fourth child -->
-        <div class="row px-1">
+        <div class="container">
+            <div class="row">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>Product Title </th>
+                            <th>Product Image</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                            <th>Remove</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
 
-            <!-- products -->
-            <div class="col-md-10">
-                <div class="row">
+                    <tbody>
+                        <tr>
+                            <td>Apple</td>
+                            <td><img src="./images/apple.jpg" alt=""></td>
+                            <td><input type="text" name="" id=""></td>
+                            <td>9000</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <p>Update</p>
+                                <p>Remove</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    <!-- fetching products -->
-                    <?php
-
-                        searchProducts();
-                        getUniqueCategories();
-                        getUniqueBrands();
-
-                    ?>
-
+                <div class="d-flex mb-3">
+                    <h4 class="px-3">Subtotal: <strong class="text-info">5000/-</strong></h4>
+                    <a href="index.php" class="">
+                        <button class="bg-info px-3 py-2 border-0 mx-3">Continue Shopping</button>
+                    </a>
+                    <a href="#" class="">
+                        <button class="bg-secondary px-3 py-2 border-0 text-light">Checkout</button>
+                    </a>
                 </div>
             </div>
-
-            <!-- sidenav -->
-            <div class="col-md-2 bg-secondary p-0">
-
-                <!-- brands to be displayed -->
-                <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light"><h4>Delivery Brands</h4></a>
-                    </li>
-
-                    <?php
-
-                        getBrands();
-
-                    ?>
-
-                </ul>
-
-                <!-- categories to be displayed -->
-                <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
-                    </li>
-
-                    <?php
-
-                        getCategories();
-
-                    ?>
-
-                </ul>
-            </div>
         </div>
+
+        <!-- calling the cart function -->
+        <?php
+
+            cart();
+
+        ?>
 
         <!-- include footer file -->
         <?php
             include("./includes/footer.php")
         ?>
+
     </div>
 
 
