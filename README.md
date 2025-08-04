@@ -218,3 +218,8 @@
 
 # part-33
 # section-01
+    - go to the --> cart.php
+    - make changes inside --> "fourth child" ~ "form" ~ "table"
+
+# part-34
+## section-02
