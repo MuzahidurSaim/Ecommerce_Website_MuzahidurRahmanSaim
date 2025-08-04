@@ -135,10 +135,10 @@
                                                 }
                                             ?>
                                             <td><?= $price_table ?>/-</td>
-                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" name="remove_item[]" value="<?= $product_id ?>"></td>
                                             <td>
                                                 <input type="submit" value="Update Cart" class="bg-info px-3 py-2 border-0 mx-3" name="update_cart">
-                                                <button class="bg-info px-3 py-2 border-0 mx-3">Remove</button>
+                                                <input type="submit" value="Remove Cart" class="bg-info px-3 py-2 border-0 mx-3" name="remove_cart">
                                             </td>
                                         </tr>
                                         <?php
@@ -156,6 +156,27 @@
                         <a href="#" class=""><button class="bg-secondary px-3 py-2 border-0 text-light">Checkout</button></a>
                     </div>
                 </form>
+
+                <!-- function to remove cart items -->
+                <?php
+
+                    function remove_cart_item() {
+                        global $con;
+                        if(isset($_POST['remove_cart'])) {
+                            foreach($_POST['remove_item'] as $remove_id) {
+                                echo $remove_id;
+                                $delete_query="DELETE FROM `cart_details` WHERE product_id=$remove_id";
+                                $run_delete=mysqli_query($con, $delete_query);
+                                if($run_delete) {
+                                    echo "<script>window.open('cart.php', '_self')</script>";
+                                }
+                            }
+                        }
+                    }
+                    echo $remove_item_function=remove_cart_item();
+
+                ?>
+
             </div>
         </div>
 

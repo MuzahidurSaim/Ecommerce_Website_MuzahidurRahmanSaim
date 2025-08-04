@@ -211,4 +211,10 @@
 
 # part-32
 ## section-01
-    - 
+    - go to the --> cart.php
+    - modify the "remove" button option
+    - then make php changes for the remove function in the --> cart page
+    - also create a new function there --> remove_cart_item() to remove the items
+
+# part-33
+# section-01
