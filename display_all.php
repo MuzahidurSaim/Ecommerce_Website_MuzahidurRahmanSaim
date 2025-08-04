@@ -54,7 +54,7 @@
                             <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup><?php cartItems(); ?></sup></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Total Price: 100/-</a>
+                            <a class="nav-link" href="#">Total Price: <?php cartTotalPrice(); ?>/-</a>
                         </li>
                     </ul>
 

@@ -184,3 +184,10 @@
 
 # part-28
 ## section-01
+    - go to the --> functions/common_function.php
+    - create a new function --> cartTotalPrice()
+    - modify the the function to calculate the total price of each user/ip address
+    - change the cart total price to dynamic > "first child" > "navbar" > "Total Price" --> calling the "cartTotalPrice()" function in "index.php", "product_details.php", "search_product.php", "display_all.php"
+
+# part-29
+## section-01
