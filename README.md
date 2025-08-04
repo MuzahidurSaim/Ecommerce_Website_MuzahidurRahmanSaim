@@ -174,3 +174,9 @@
 
 # part-26
 ## section-01
+    - go to --> functions/common_function.php
+    - create a new function --> cartItems()
+    - change the cart number to dynamic > "first child" > "navbar" > "sup" --> calling the "cartItems()" function in "index.php", "product_details.php", "search_product.php", "display_all.php"
+
+# part-27
+## section-01
