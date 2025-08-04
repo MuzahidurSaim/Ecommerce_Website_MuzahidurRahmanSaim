@@ -205,3 +205,10 @@
 
 # part-31
 ## section-01
+    - go to --> cart.php
+    - create a form inside --> "fourth child" ~ "container" ~ "row"
+    - make php changes inside the --> "tbody"
+
+# part-32
+## section-01
+    - 
