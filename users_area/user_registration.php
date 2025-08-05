@@ -65,65 +65,159 @@
 
     <!-- bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css file -->
+    <link rel = "stylesheet" href = "style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .logo {
+            width:4%;
+            height:2%;
+        }
+    </style>
 </head>
 <body>
-    <div class="container-fluid my-3">
-        <h2 class="text-center">New User Registration</h2>
-        <div class="row d-flex align-items-center justify-content-center mt-5">
-            <div class="col-lg-12 col-xl-6">
-                <form action="" method="post" class="" enctype="multipart/form-data">
+    <div class="container-fluid p-0">
 
-                    <!-- username field -->
-                    <div class="form-outline mb-4">
-                        <label for="user_username" class="form-label">Username</label>
-                        <input type="text" id="user_username" class="form-control" placeholder="Enter your username" autocomplete="off" required="required" name="user_username">
-                    </div>
+        <!-- first child -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
 
-                    <!-- email field -->
-                    <div class="form-outline mb-4">
-                        <label for="user_useremail" class="form-label">Email</label>
-                        <input type="email" id="user_useremail" class="form-control" placeholder="Enter your email" autocomplete="off" required="required" name="user_useremail">
-                    </div>
+            <!-- navbar -->
+            <div class="container-fluid">
+                <img src = "../images/logo.png" alt = "" class = "logo">
 
-                    <!-- image field -->
-                    <div class="form-outline mb-4">
-                        <label for="user_userimage" class="form-label">User Image</label>
-                        <input type="file" id="user_userimage" class="form-control" required="required" name="user_userimage">
-                    </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <!-- password field -->
-                    <div class="form-outline mb-4">
-                        <label for="user_userpassword" class="form-label">Password</label>
-                        <input type="password" id="user_userpassword" class="form-control" placeholder="Enter your password" autocomplete="off" required="required" name="user_userpassword">
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../display_all.php">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user_registration.php">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cartItems(); ?></sup></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Total Price: <?php cartTotalPrice(); ?>/-</a>
+                        </li>
+                    </ul>
 
-                    <!-- confirmed password field -->
-                    <div class="form-outline mb-4">
-                        <label for="user_conf_userpassword" class="form-label">Confirm Password</label>
-                        <input type="password" id="user_conf_userpassword" class="form-control" placeholder="Confirm password" autocomplete="off" required="required" name="user_conf_userpassword">
-                    </div>
+                    <form class="d-flex" role="search" action="../search_product.php" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+                        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
+                    </form>
+                </div>
+            </div>
+        </nav>
 
-                    <!-- address field -->
-                    <div class="form-outline mb-4">
-                        <label for="user_useraddress" class="form-label">Address</label>
-                        <input type="text" id="user_useraddress" class="form-control" placeholder="Enter your address" autocomplete="off" required="required" name="user_useraddress">
-                    </div>
+        <!-- second child -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <ul class = "navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Welcome Guest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user_login.php">Login</a>
+                </li>
+            </ul>
+        </nav>
 
-                    <!-- contact field -->
-                    <div class="form-outline mb-4">
-                        <label for="user_usercontact" class="form-label">Contact</label>
-                        <input type="text" id="user_usercontact" class="form-control" placeholder="Enter your mobile number" autocomplete="off" required="required" name="user_usercontact">
-                    </div>
+        <!-- third child -->
+        <div class = "bg-light py-2">
+            <h3 class="text-center">Online Store</h3>
+            <p class="text-center">Communication is at the heart of e-commerce and community</p>
+        </div>
 
-                    <!-- submit button -->
-                    <div class="mt-4 pt-2">
-                        <input type="submit" class="bg-info py-2 px-3 border-0" value="Register" name="user_register">
-                        <p class="small fw-bold mt-3 pt-1 mb-0">Already have an account? <a href="user_login.php" class="text-danger">Login</a></p>
-                    </div>
+        <!-- fourth child -->
+        <div class="container-fluid my-3">
+            <h1 class="text-center">User Registration</h1>
+            <div class="row d-flex align-items-center justify-content-center mt-5">
+                <div class="col-lg-12 col-xl-6">
+                    <form action="" method="post" class="" enctype="multipart/form-data">
 
-                </form>
+                        <!-- username field -->
+                        <div class="form-outline mb-4">
+                            <label for="user_username" class="form-label">Username</label>
+                            <input type="text" id="user_username" class="form-control" placeholder="Enter your username" autocomplete="off" required="required" name="user_username">
+                        </div>
+
+                        <!-- email field -->
+                        <div class="form-outline mb-4">
+                            <label for="user_useremail" class="form-label">Email</label>
+                            <input type="email" id="user_useremail" class="form-control" placeholder="Enter your email" autocomplete="off" required="required" name="user_useremail">
+                        </div>
+
+                        <!-- image field -->
+                        <div class="form-outline mb-4">
+                            <label for="user_userimage" class="form-label">User Image</label>
+                            <input type="file" id="user_userimage" class="form-control" required="required" name="user_userimage">
+                        </div>
+
+                        <!-- password field -->
+                        <div class="form-outline mb-4">
+                            <label for="user_userpassword" class="form-label">Password</label>
+                            <input type="password" id="user_userpassword" class="form-control" placeholder="Enter your password" autocomplete="off" required="required" name="user_userpassword">
+                        </div>
+
+                        <!-- confirmed password field -->
+                        <div class="form-outline mb-4">
+                            <label for="user_conf_userpassword" class="form-label">Confirm Password</label>
+                            <input type="password" id="user_conf_userpassword" class="form-control" placeholder="Confirm password" autocomplete="off" required="required" name="user_conf_userpassword">
+                        </div>
+
+                        <!-- address field -->
+                        <div class="form-outline mb-4">
+                            <label for="user_useraddress" class="form-label">Address</label>
+                            <input type="text" id="user_useraddress" class="form-control" placeholder="Enter your address" autocomplete="off" required="required" name="user_useraddress">
+                        </div>
+
+                        <!-- contact field -->
+                        <div class="form-outline mb-4">
+                            <label for="user_usercontact" class="form-label">Contact</label>
+                            <input type="text" id="user_usercontact" class="form-control" placeholder="Enter your mobile number" autocomplete="off" required="required" name="user_usercontact">
+                        </div>
+
+                        <!-- submit button -->
+                        <div class="mt-4 pt-2">
+                            <input type="submit" class="bg-info py-2 px-3 border-0" value="Register" name="user_register">
+                            <p class="small fw-bold mt-3 pt-1 mb-0">Already have an account? <a href="user_login.php" class="text-danger">Login</a></p>
+                        </div>
+
+                    </form>
+                </div>
             </div>
         </div>
+
+        <!-- include footer file -->
+        <?php
+            include("../includes/footer.php")
+        ?>
+
     </div>
+
+    <!-- bootstrap js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>

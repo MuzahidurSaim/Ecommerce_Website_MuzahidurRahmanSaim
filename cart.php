@@ -1,7 +1,7 @@
 <?php
 
     include('includes/connect.php');
-    include('functions/common_function.php');
+    include_once('functions/common_function.php');
 
 ?>
 
@@ -101,7 +101,7 @@
         </nav>
 
         <!--third child -->
-        <div class = "bg-light">
+        <div class = "bg-light" py-2>
             <h3 class="text-center">Online Store</h3>
             <p class="text-center">Communication is at the heart of e-commerce and community</p>
         </div>

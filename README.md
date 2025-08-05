@@ -336,3 +336,7 @@
 
 # part-45
 ## section-01
+    - linked all the pages to their relative pages
+
+# part-46
+## section-01

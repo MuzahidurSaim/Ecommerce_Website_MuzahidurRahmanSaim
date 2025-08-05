@@ -1,8 +1,16 @@
 <?php
+    session_start();
 
     include('../includes/connect.php');
     include_once('../functions/common_function.php');
 
+    if (!isset($_SESSION['username'])) {
+        echo "<script>window.open('user_login.php', '_self')</script>";
+        exit();
+    } else {
+        echo "<script>window.open('payment.php', '_self')</script>";
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -94,8 +102,8 @@
             </ul>
         </nav>
 
-        <!--third child -->
-        <div class = "bg-light">
+        <!-- third child -->
+        <div class = "bg-light py-2">
             <h3 class="text-center">Online Store</h3>
             <p class="text-center">Communication is at the heart of e-commerce and community</p>
         </div>
@@ -123,7 +131,6 @@
         ?>
 
     </div>
-
 
     <!-- bootstrap js link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
