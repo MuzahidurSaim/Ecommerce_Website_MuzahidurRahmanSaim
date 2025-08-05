@@ -20,7 +20,7 @@
 
     <!-- css file -->
     <link rel = "stylesheet" href = "style.css">
-    <style class="">
+    <style>
         * {
             padding: 0;
             margin: 0;
@@ -217,7 +217,6 @@
 
             </div>
         </div>
-
 
         <!-- calling the cart function -->
         <?php
