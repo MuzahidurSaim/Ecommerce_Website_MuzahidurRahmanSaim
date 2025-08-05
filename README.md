@@ -234,3 +234,46 @@
 
 # part-35
 ## section-01
+    - first create a page --> "sessions.php" for logging in
+        <!--
+            <?php
+                session_start();
+                $_SESSION['username']="Saim";
+                $_SESSION['password']="coding";
+                echo "Session/login data is saved";
+            ?>
+        -->
+## section-02
+    - then create a page --> "information.php" for storing the user information
+        <!--
+            <?php
+                session_start();
+                if(isset($_SESSION['username'])) {
+                    echo "Welcome ".$_SESSION['username'];
+                    echo "<br>";
+                    echo "And your password is ".$_SESSION['password'];
+                } else {
+                    echo "Please login again to continue";
+                }
+            ?>
+        -->
+## section-03
+    - at last create a page --> "logout.php" for logging out
+        <!--
+            <?php
+                session_start();
+                session_unset();
+                session_destroy();
+                echo "Informations are destroyed";
+            ?>
+        -->
+## section-04
+    - then check the pages by visiting them in order
+        <!--
+            http://localhost/test_project/sessions.php
+            http://localhost/test_project/information.php
+            http://localhost/test_project/logout.php
+        -->
+
+# part-36
+## section-01
