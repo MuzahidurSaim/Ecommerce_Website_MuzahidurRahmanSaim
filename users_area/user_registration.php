@@ -2,7 +2,7 @@
 
     /* connecting to the database */
     include('../includes/connect.php');
-    include('../functions/common_function.php');
+    include_once('../functions/common_function.php');
 
     /* storing registration information into the database */
     if(isset($_POST['user_register'])) {

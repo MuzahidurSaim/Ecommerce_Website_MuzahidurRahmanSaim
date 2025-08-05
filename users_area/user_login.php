@@ -2,7 +2,7 @@
 
     /* connecting to the database */
     include('../includes/connect.php');
-    include('../functions/common_function.php');
+    include_once('../functions/common_function.php');
 
     /* checking whether the user credentials are correct or not */
     if(isset($_POST['user_login'])) {
