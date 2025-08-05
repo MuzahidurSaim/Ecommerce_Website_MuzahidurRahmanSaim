@@ -19,6 +19,11 @@
 
     <!-- css file -->
     <link rel = "stylesheet" href = "style.css">
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 <body>
 

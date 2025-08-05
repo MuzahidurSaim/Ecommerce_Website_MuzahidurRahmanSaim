@@ -21,6 +21,9 @@
     <!-- css file -->
     <link rel = "stylesheet" href = "style.css">
     <style class="">
+        body {
+            overflow-x: hidden;
+        }
         .cart_img {
             width: 80px;
             height: 80px;
