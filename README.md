@@ -289,4 +289,8 @@
 
 # part-37
 ## section-01
-    -
+    - create a new file --> users_area/user_registration.php
+    - modify the file to create the layout of the --> "registration" page
+
+# part-38
+## section-01
