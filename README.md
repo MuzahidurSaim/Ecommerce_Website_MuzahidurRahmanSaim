@@ -277,5 +277,16 @@
 
 # part-36
 ## section-01
-    -
+    - create a new database table --> user_table
+    - create a new column --> user_id [int, auto increment, primary]
+    - create a new column --> user_name [varchar, 100]
+    - create a new column --> user_email [varchar, 100]
+    - create a new column --> user_password [varchar, 255]
+    - create a new column --> user_image [varchar, 255]
+    - create a new column --> user_ip [varchar, 255]
+    - create a new column --> user_address [varchar, 255]
+    - create a new column --> user_mobile [varchar, 20]
+
+# part-37
+## section-01
     -
