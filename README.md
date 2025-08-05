@@ -217,9 +217,20 @@
     - also create a new function there --> remove_cart_item() to remove the items
 
 # part-33
-# section-01
+## section-01
     - go to the --> cart.php
     - make changes inside --> "fourth child" ~ "form" ~ "table"
 
 # part-34
+## section-01
+    - go to the --> cart.php
+    - make changes near --> "fourth child" ~ "form" ~ "table" ~ "Checkout"
+    - create a new php file --> checkout.php
+    - copy paste the entire code here --> from "index.php"
+    - make neccessary changes inside it
 ## section-02
+    - create two new php files --> "payment.php" and "users_area/user_login.php"
+    - then we introduce php "session" for payment option inside the --> checkout.php
+
+# part-35
+## section-01
