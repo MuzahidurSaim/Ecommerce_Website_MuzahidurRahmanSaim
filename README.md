@@ -307,3 +307,8 @@
 
 # part-40
 ## section-01
+    - go to the --> users_area/user_registration.php
+    - make php changes to check conditions for the --> name, email, passwords
+
+# part-41
+## section-02
