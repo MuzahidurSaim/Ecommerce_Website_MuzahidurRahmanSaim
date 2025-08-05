@@ -328,4 +328,11 @@
     - make php changes to --> check whether the "username" and "password" matches with our database or not
 
 # part-44
-## section-02
+## section-01
+    - go to the --> users_area/user_login.php
+    - create a new file --> users_area/profile.php
+    - move "payment.php" inside --> users_area
+    - make php changes to the "users_area/user_login.php" file --> so that it will redirect to "users_area/payment.php" page if there are items in the cart, or to the "users_area/profile.php" page if the cart is empty.
+
+# part-45
+## section-01

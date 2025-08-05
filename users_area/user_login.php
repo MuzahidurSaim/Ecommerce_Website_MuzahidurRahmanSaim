@@ -1,3 +1,45 @@
+<?php
+
+    /* connecting to the database */
+    include('../includes/connect.php');
+    include('../functions/common_function.php');
+
+    /* checking whether the user credentials are correct or not */
+    if(isset($_POST['user_login'])) {
+        $user_username=$_POST['user_username'];
+        $user_userpassword=$_POST['user_userpassword'];
+
+        $select_query="SELECT * FROM `user_table` WHERE user_name='$user_username'";
+        $result=mysqli_query($con, $select_query);
+        $row_count=mysqli_num_rows($result);
+        $row_data=mysqli_fetch_assoc($result);
+        $user_userip=getUserIpAddress();
+
+        $select_query_cart="SELECT * FROM `cart_details` WHERE ip_address='$user_userip'";
+        $select_cart=mysqli_query($con, $select_query_cart);
+        $row_count_cart=mysqli_num_rows($select_cart);
+
+        if($row_count>0) {
+            $_SESSION['username']=$user_username;
+            if(password_verify($user_userpassword, $row_data['user_password'])) {
+                if($row_count==1 AND $row_count_cart==0) {
+                    $_SESSION['username']=$user_username;
+                    echo "<script>alert('Login successful')</script>";
+                    echo "<script>window.open('profile.php', '_self')</script>";
+                } else {
+                    $_SESSION['username']=$user_username;
+                    echo "<script>alert('Login successful')</script>";
+                    echo "<script>window.open('payment.php', '_self')</script>";
+                }
+            } else {
+                echo "<script>alert('Password does not match')</script>";
+            }
+        } else {
+            echo "<script>alert('Username does not match')</script>";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,26 +88,3 @@
     </div>
 </body>
 </html>
-
-<?php
-
-    if(isset($_POST['user_login'])) {
-        $user_username=$_POST['user_username'];
-        $user_userpassword=$_POST['user_userpassword'];
-
-        $select_query="SELECT * FROM `user_table` WHERE user_name='$user_username'";
-        $result=mysqli_query($con, $select_query);
-        $row_count=mysqli_num_rows($result);
-        $row_data=mysqli_fetch_assoc($result);
-
-        if($row_count>0) {
-            if(password_verify($user_userpassword, $row_data['user_password'])) {
-                echo "<script>alert('Login successful')</script>";
-            } else {
-                echo "<script>alert('Password does not match')</script>";
-            }
-        } else {
-            echo "<script>alert('Username does not match')</script>";
-        }
-    }
-?>
