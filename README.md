@@ -311,4 +311,11 @@
     - make php changes to check conditions for the --> name, email, passwords
 
 # part-41
-## section-02
+## section-01
+    - go to the --> users_area/user_registration.php
+    - make php changes to store the passwords in the database as --> password hashing
+    - password hashing --> encrypting passwords
+    - password hash documentation --> https://www.php.net/manual/en/function.password-hash.php
+
+# part-42
+## section-01
