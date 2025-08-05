@@ -11,7 +11,7 @@
 <body>
     <div class="container-fluid my-3">
         <h2 class="text-center">New User Registration</h2>
-        <div class="row d-flex align-items-center justify-content-center">
+        <div class="row d-flex align-items-center justify-content-center mt-5">
             <div class="col-lg-12 col-xl-6">
                 <form action="" method="post" class="" enctype="multipart/form-data">
 
@@ -62,7 +62,7 @@
                         <input type="submit" class="bg-info py-2 px-3 border-0" value="Register" name="user_register">
                         <p class="small fw-bold mt-3 pt-1 mb-0">Already have an account? <a href="user_login.php" class="text-danger">Login</a></p>
                     </div>
-                    
+
                 </form>
             </div>
         </div>

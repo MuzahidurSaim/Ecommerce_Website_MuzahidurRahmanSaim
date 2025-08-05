@@ -294,3 +294,10 @@
 
 # part-38
 ## section-01
+    - go to the --> "users_area/user_login.php" file
+    - copy paste the entire code here from --> users_area/user_registration.php
+    - modify the file accordingly
+    - link the "login" and "registration" files to the --> "index.php", "display_all.php", "product_details.php", "cart.php" files
+
+# part-39
+## section-01

@@ -1,6 +1,6 @@
 <?php
 
-    include('includes/connect.php');
+    include('../includes/connect.php');
 
 ?>
 
@@ -31,7 +31,7 @@
             <div class="container-fluid">
                 <img src = "./images/logo.png" alt = "" class = "logo">
 
-                <button class="navbar-toggler" type="button" data-b s-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -84,8 +84,10 @@
             <div class="col-md-12c">
                 <div class="row">
                     <?php
-                        if(isset($_SESSION['username'])) {
-                            include('users_area/user_login.php');
+
+                        session_start();
+                        if(!isset($_SESSION['username'])) {
+                            include('user_login.php');
                         } else {
                             include('payment.php');
                         }
@@ -99,7 +101,7 @@
 
         <!-- include footer file -->
         <?php
-            include("./includes/footer.php")
+            include("../includes/footer.php")
         ?>
 
     </div>
