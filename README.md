@@ -319,3 +319,8 @@
 
 # part-42
 ## section-01
+    - go to the --> users_area/user_registration.php
+    - make php changes to check whether the user added items in the cart before --> logging in
+
+# part-43
+## section-01

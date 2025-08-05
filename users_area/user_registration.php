@@ -39,6 +39,19 @@
                 die(mysqli_error($con));
             }
         }
+
+        /* checking if the user has added items in the cart before login */
+        $select_cart_items="SELECT * FROM `cart_details` WHERE ip_address='$user_userip'";
+        $result_cart=mysqli_query($con, $select_cart_items);
+        $rows_count=mysqli_num_rows($result_cart);
+
+        if($rows_count>0) {
+            $_SESSION['username']=$user_username;
+            echo "<script>alert('You have items in your cart')</script>";
+            echo "<script>window.open('checkout.php', '_self')</script>";
+        } else {
+            echo "<script>window.open('../index.php', '_self')</script>";
+        }
     }
 
 ?>
