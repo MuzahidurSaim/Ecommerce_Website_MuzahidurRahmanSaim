@@ -7,13 +7,20 @@
 
     <!-- bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!-- css style -->
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid my-3">
         <h2 class="text-center">User Login</h2>
         <div class="row d-flex align-items-center justify-content-center mt-5">
             <div class="col-lg-12 col-xl-6">
-                <form action="" method="post" class="" enctype="multipart/form-data">
+                <form action="" method="post">
 
                     <!-- username field -->
                     <div class="form-outline mb-4">
@@ -39,3 +46,26 @@
     </div>
 </body>
 </html>
+
+<?php
+
+    if(isset($_POST['user_login'])) {
+        $user_username=$_POST['user_username'];
+        $user_userpassword=$_POST['user_userpassword'];
+
+        $select_query="SELECT * FROM `user_table` WHERE user_name='$user_username'";
+        $result=mysqli_query($con, $select_query);
+        $row_count=mysqli_num_rows($result);
+        $row_data=mysqli_fetch_assoc($result);
+
+        if($row_count>0) {
+            if(password_verify($user_userpassword, $row_data['user_password'])) {
+                echo "<script>alert('Login successful')</script>";
+            } else {
+                echo "<script>alert('Password does not match')</script>";
+            }
+        } else {
+            echo "<script>alert('Username does not match')</script>";
+        }
+    }
+?>
