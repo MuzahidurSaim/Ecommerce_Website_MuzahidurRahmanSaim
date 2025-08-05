@@ -301,3 +301,9 @@
 
 # part-39
 ## section-01
+    - connect the database "includes/connect.php" with the --> "users_area/user_registration.php" file
+    - create a new folder to store the user provided images --> users_area/user_images
+    - make php changes in this file to store the register information inside the database
+
+# part-40
+## section-01

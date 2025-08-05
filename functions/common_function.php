@@ -1,8 +1,5 @@
 <?php
 
-    // including database connect file
-    include('./includes/connect.php');
-
     // function for getting products
     function getProducts() {
         global $con;

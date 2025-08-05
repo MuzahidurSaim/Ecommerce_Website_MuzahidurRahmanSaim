@@ -1,3 +1,35 @@
+<?php
+
+    /* connecting to the database */
+    include('../includes/connect.php');
+    include('../functions/common_function.php');
+
+    /* storing registration information into the database */
+    if(isset($_POST['user_register'])) {
+        $user_username=$_POST['user_username'];
+        $user_useremail=$_POST['user_useremail'];
+        $user_userpassword=$_POST['user_userpassword'];
+        $user_conf_userpassword=$_POST['user_conf_userpassword'];
+        $user_useraddress=$_POST['user_useraddress'];
+        $user_usercontact=$_POST['user_usercontact'];
+        $user_userip=getUserIpAddress();
+
+        $user_userimage=$_FILES['user_userimage']['name'];
+        $user_tmp_userimage=$_FILES['user_userimage']['tmp_name'];
+        move_uploaded_file($user_tmp_userimage, "./user_images/$user_userimage");
+
+        $insert_query="INSERT INTO `user_table` (user_name, user_email, user_password, user_image, user_ip, user_address, user_mobile) VALUES ('$user_username', '$user_useremail', '$user_userpassword', '$user_userimage', '$user_userip', '$user_useraddress', '$user_usercontact')";
+
+        $sql_execute=mysqli_query($con, $insert_query);
+        if($sql_execute) {
+            echo "<script>alert('Data inserted successfully')</script>";
+        } else {
+            die(mysqli_error($con));
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +73,8 @@
 
                     <!-- confirmed password field -->
                     <div class="form-outline mb-4">
-                        <label for="conf_user_userpassword" class="form-label">Confirm Password</label>
-                        <input type="password" id="conf_user_userpassword" class="form-control" placeholder="Confirm password" autocomplete="off" required="required" name="conf_user_userpassword">
+                        <label for="user_conf_userpassword" class="form-label">Confirm Password</label>
+                        <input type="password" id="user_conf_userpassword" class="form-control" placeholder="Confirm password" autocomplete="off" required="required" name="user_conf_userpassword">
                     </div>
 
                     <!-- address field -->
