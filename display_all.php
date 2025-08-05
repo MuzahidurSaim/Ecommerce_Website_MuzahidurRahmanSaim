@@ -21,8 +21,19 @@
     <!-- css file -->
     <link rel = "stylesheet" href = "style.css">
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
         body {
             overflow-x: hidden;
+        }
+
+        .logo {
+            width:4%;
+            height:2%;
         }
     </style>
 </head>
@@ -85,7 +96,7 @@
 
         <!--third child -->
         <div class = "bg-light">
-            <h3 class="text-center">Hidden Store</h3>
+            <h3 class="text-center">Online Store</h3>
             <p class="text-center">Communication is at the heart of e-commerce and community</p>
         </div>
 
