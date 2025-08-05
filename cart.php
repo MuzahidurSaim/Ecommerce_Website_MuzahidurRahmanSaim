@@ -75,7 +75,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cartItems(); ?></sup></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Total Price: <?php cartTotalPrice(); ?>/-</a>
+                        </li>
                     </ul>
+
+                    <form class="d-flex" role="search" action="search_product.php" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+                        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
+                    </form>
                 </div>
             </div>
         </nav>
