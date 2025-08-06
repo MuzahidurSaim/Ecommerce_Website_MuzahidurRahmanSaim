@@ -344,3 +344,7 @@
 
 # part-47
 ## section-01
+    - worked on the logout page
+
+# part-48
+## section-01
