@@ -340,3 +340,7 @@
 
 # part-46
 ## section-01
+    - adding logout logic inside each file
+
+# part-47
+## section-01

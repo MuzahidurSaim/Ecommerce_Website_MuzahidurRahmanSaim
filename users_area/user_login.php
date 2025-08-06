@@ -1,8 +1,8 @@
 <?php
-
     /* connecting to the database */
     include('../includes/connect.php');
-    include_once('../functions/common_function.php');
+    include('../functions/common_function.php');
+    @session_start();
 
     /* checking whether the user credentials are correct or not */
     if(isset($_POST['user_login'])) {
@@ -75,65 +75,6 @@
 <body>
     <div class="container-fluid p-0">
 
-        <!-- first child -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
-
-            <!-- navbar -->
-            <div class="container-fluid">
-                <img src = "../images/logo.png" alt = "" class = "logo">
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../display_all.php">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="user_registration.php">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cartItems(); ?></sup></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Total Price: <?php cartTotalPrice(); ?>/-</a>
-                        </li>
-                    </ul>
-
-                    <form class="d-flex" role="search" action="../search_product.php" method="get">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
-                        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
-                    </form>
-                </div>
-            </div>
-        </nav>
-
-        <!-- second child -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-            <ul class = "navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome Guest</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="user_login.php">Login</a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- third child -->
-        <div class = "bg-light py-2">
-            <h3 class="text-center">Online Store</h3>
-            <p class="text-center">Communication is at the heart of e-commerce and community</p>
-        </div>
-
         <!-- fourth child -->
         <div class="container-fluid my-3">
             <h1 class="text-center">User Login</h1>
@@ -163,11 +104,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- include footer file -->
-        <?php
-            include("../includes/footer.php")
-        ?>
 
     </div>
 

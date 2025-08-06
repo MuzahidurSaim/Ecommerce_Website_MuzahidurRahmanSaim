@@ -1,8 +1,7 @@
 <?php
-
     include('includes/connect.php');
     include('functions/common_function.php');
-
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -88,9 +87,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Welcome Guest</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./users_area/user_login.php">Login</a>
-                </li>
+                <?php
+                    if(!isset($_SESSION['username'])) {
+                        echo "<li class='nav-item'><a class='nav-link' href='./users_area/user_login.php'>Login</a></li>";
+                    } else {
+                        echo "<li class='nav-item'><a class='nav-link' href='./users_area/user_logout.php'>Logout</a></li>";
+                    }
+                ?>
             </ul>
         </nav>
 

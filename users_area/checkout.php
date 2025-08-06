@@ -1,16 +1,6 @@
 <?php
-    session_start();
-
     include('../includes/connect.php');
-    include_once('../functions/common_function.php');
-
-    if (!isset($_SESSION['username'])) {
-        echo "<script>window.open('user_login.php', '_self')</script>";
-        exit();
-    } else {
-        echo "<script>window.open('payment.php', '_self')</script>";
-        exit();
-    }
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -74,12 +64,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cartItems(); ?></sup></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Total Price: <?php cartTotalPrice(); ?>/-</a>
-                        </li>
                     </ul>
 
                     <form class="d-flex" role="search" action="../search_product.php" method="get">
@@ -96,9 +80,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Welcome Guest</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="user_login.php">Login</a>
-                </li>
+                <?php
+                    if(!isset($_SESSION['username'])) {
+                        echo "<li class='nav-item'><a class='nav-link' href='./user_login.php'>Login</a></li>";
+                    } else {
+                        echo "<li class='nav-item'><a class='nav-link' href='./user_logout.php'>Logout</a></li>";
+                    }
+                ?>
             </ul>
         </nav>
 
@@ -111,7 +99,7 @@
         <!-- fourth child -->
         <div class="row px-1">
 
-            <!-- products -->
+            <!-- session -->
             <div class="col-md-12c">
                 <div class="row">
                     <?php
