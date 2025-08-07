@@ -354,3 +354,22 @@
 
 # part-49
 ## section-01
+    - create a new table --> user_orders
+    - create a new column --> order_id [int, primary, auto increment]
+    - create a new column --> user_id [int]
+    - create a new column --> amount_due [int, 255]
+    - create a new column --> invoice_number [int, 255]
+    - create a new column --> total_products [int, 255]
+    - create a new column --> order_date [timestamp]
+    - create a new column --> order_status [varchar, 255]
+## section-02
+    - create a new table --> orders_pending
+    - create a new column --> order_id [int, primary, auto increment]
+    - create a new column --> user_id [int]
+    - create a new column --> invoice_number [int, 255]
+    - create a new column --> product_id [int]
+    - create a new column --> quantity [int, 255]
+    - create a new column --> order_status [varchar, 255]
+
+# part-50
+## section-01
