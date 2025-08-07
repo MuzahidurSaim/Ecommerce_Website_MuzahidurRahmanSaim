@@ -348,3 +348,9 @@
 
 # part-48
 ## section-01
+    - go to the --> users_area\payment.php
+    - create a new file --> users_area\order.php
+    - design the payment page accordingly for payment layout
+
+# part-49
+## section-01
