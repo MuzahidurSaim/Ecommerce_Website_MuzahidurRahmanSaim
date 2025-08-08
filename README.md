@@ -383,3 +383,10 @@
 
 # part-52
 ## section-01
+    - go to the --> users_area/order.php
+    - make php changes so that the cart items are removed automatically, after placing an order by clicking on "Pay Offline" button
+    - and also, when placing orders; the data is added to both "orders_pending" and "user_orders" table simultaniously
+    - Issue!! --> in "orders_pending" table; only one product is added to the database
+
+# part-53
+## section-01
