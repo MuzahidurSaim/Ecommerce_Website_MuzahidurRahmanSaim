@@ -418,3 +418,9 @@
 
 # part-58
 ## section-01
+    - create a new file --> users_area/user_orders.php
+    - include this file to the --> users_area/profile.php
+    - design the "user_orders" file --> to display the ordered items of the user; in the user "Dashboard"
+
+# part-59
+## section-01
