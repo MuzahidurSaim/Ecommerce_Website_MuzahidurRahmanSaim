@@ -63,6 +63,10 @@
                             <a class="nav-link" href="./users_area/user_registration.php">Register</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="./users_area/profile.php">My Account</a>
+                        </li>
+                        <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item">

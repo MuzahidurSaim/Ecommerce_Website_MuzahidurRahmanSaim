@@ -390,3 +390,8 @@
 
 # part-53
 ## section-01
+    - go to the --> users_area/profile.php
+    - design this file as the --> user "dashboard"
+
+# part-54
+## section-01
