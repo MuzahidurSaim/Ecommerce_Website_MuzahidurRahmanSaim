@@ -395,3 +395,9 @@
 
 # part-54
 ## section-01
+    - go to the --> users_area/profile.php
+    - modify the php code --> to fetch the user image in the dashboard
+    - also add proper links to the dashboard options
+
+# part-55
+## section-01
