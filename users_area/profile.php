@@ -153,7 +153,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-10"></div>
+            <div class="col-md-10">
+                <?php get_user_order_details(); ?>
+            </div>
         </div>
 
         <!-- include footer file -->

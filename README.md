@@ -401,3 +401,9 @@
 
 # part-55
 ## section-01
+    - go to the --> functions/common_function.php
+    - create a new function --> get_user_order_details() <-- to get the data of the orders that user has in their cart
+    - call that function inside --> users_area/profile.php --> fourth child --> div
+
+# part-56
+## section-01
