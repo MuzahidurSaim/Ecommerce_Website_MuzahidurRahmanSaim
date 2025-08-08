@@ -373,3 +373,8 @@
 
 # part-50
 ## section-01
+    - go to the --> users_area/order.php
+    - write php codes to get access to the user ip address and their total order items with total price from database
+
+# part-51
+## section-01
