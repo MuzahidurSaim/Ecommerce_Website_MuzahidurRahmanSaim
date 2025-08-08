@@ -407,3 +407,9 @@
 
 # part-56
 ## section-01
+    - go to the --> users_area/profile.php
+    - include in the "fourth child" the file --> users_area/edit_account.php
+    - design the file --> users_area/edit_account.php
+
+# part-57
+## section-01

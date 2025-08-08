@@ -41,6 +41,12 @@
             display: block;
             object-fit: contain;
         }
+
+        .edit_image {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -153,8 +159,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-10">
-                <?php get_user_order_details(); ?>
+            <div class="col-md-10 text-center">
+                <?php
+                    get_user_order_details();
+                    if(isset($_GET['edit_account'])) {
+                        include('edit_account.php');
+                    }
+                ?>
             </div>
         </div>
 
