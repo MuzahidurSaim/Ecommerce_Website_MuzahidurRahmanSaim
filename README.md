@@ -378,3 +378,8 @@
 
 # part-51
 ## section-01
+    - go to the --> users_area/order.php
+    - modify the php codes --> to get order "quantity" "from the cart and also storing those values of the order to the "user_orders" table
+
+# part-52
+## section-01
