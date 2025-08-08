@@ -413,3 +413,8 @@
 
 # part-57
 ## section-01
+    - go to the --> users_area/edit_account.php
+    - add php codes to it --> so that the user given new data updates the database
+
+# part-58
+## section-01

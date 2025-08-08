@@ -1,3 +1,36 @@
+<?php
+    if(isset($_GET['edit_account'])) {
+        $user_session_name=$_SESSION['username'];
+        $select_query="SELECT * FROM `user_table` WHERE user_name='$user_session_name'";
+        $result_query=mysqli_query($con, $select_query);
+        $row_fetch=mysqli_fetch_assoc($result_query);
+        $user_id=$row_fetch['user_id'];
+        $user_name=$row_fetch['user_name'];
+        $user_email=$row_fetch['user_email'];
+        $user_address=$row_fetch['user_address'];
+        $user_mobile=$row_fetch['user_mobile'];
+    }
+
+    if(isset($_POST['user_update'])) {
+        $update_id=$user_id;
+        $user_name=$_POST['user_username'];
+        $user_email=$_POST['user_email'];
+        $user_address=$_POST['user_address'];
+        $user_mobile=$_POST['user_mobile'];
+        $user_image=$_FILES['user_image']['name'];
+        $user_image_tmp=$_FILES['user_image']['tmp_name'];
+        move_uploaded_file($user_image_tmp, "./user_images/$user_image");
+
+        // update the database
+        $update_data="UPDATE `user_table` SET user_name='$user_name', user_email='$user_email', user_address='$user_address', user_mobile='$user_mobile', user_image='$user_image' WHERE user_id=$update_id";
+        $result_query_update=mysqli_query($con, $update_data);
+        if($result_query_update) {
+            echo "<script>alert('Data updated successfully')</script>";
+            echo "<script>window.open('user_logout.php', '_self')</script>";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,20 +74,20 @@
     <h3 class="text-success my-4">Edit Account</h3>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="form-outline mb-4">
-            <input type="text" class="form-control w-50 m-auto" name="user_username" placeholder="username">
+            <input type="text" class="form-control w-50 m-auto" name="user_username" value="<?=$user_name?>">
         </div>
         <div class="form-outline mb-4">
-            <input type="email" class="form-control w-50 m-auto" name="user_email" placeholder="email">
+            <input type="email" class="form-control w-50 m-auto" name="user_email" value="<?=$user_email?>">
         </div>
         <div class="form-outline mb-4 d-flex w-50 m-auto">
             <input type="file" class="form-control" name="user_image">
             <img src="./user_images/<?=$user_image?>" alt="" class="edit_image">
         </div>
         <div class="form-outline mb-4">
-            <input type="text" class="form-control w-50 m-auto" name="user_address" placeholder="address">
+            <input type="text" class="form-control w-50 m-auto" name="user_address" value="<?=$user_address?>">
         </div>
         <div class="form-outline mb-4">
-            <input type="text" class="form-control w-50 m-auto" name="user_mobile" placeholder="mobile">
+            <input type="text" class="form-control w-50 m-auto" name="user_mobile" value="<?=$user_mobile?>">
         </div>
         <input type="submit" value="Update" class="bg-info py-2 px-3 border-0" name="user_update">
     </form>
