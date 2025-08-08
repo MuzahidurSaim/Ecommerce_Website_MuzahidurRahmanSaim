@@ -429,3 +429,16 @@
 
 # part-60
 ## section-01
+    - create a new table --> user_payments
+    - create a new column --> payment_id [int, primary, auto increment]
+    - create a new column --> order_id [int]
+    - create a new column --> invoice_number [int]
+    - create a new column --> amount [int]
+    - create a new column --> payment_mode [varchar, 255]
+    - create a new column --> date [timestamp]
+## section-02
+    - go to the --> users_area/confirm_payment.php
+    - make php changes --> so that when the user pays for the order; it will update the "user_payments" table in the database
+
+# part-61
+## section-01
