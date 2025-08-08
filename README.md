@@ -424,3 +424,8 @@
 
 # part-59
 ## section-01
+    - create a new file --> users_area/confirm_payment.php
+    - design this file --> for the user to select payment options and pay
+
+# part-60
+## section-01

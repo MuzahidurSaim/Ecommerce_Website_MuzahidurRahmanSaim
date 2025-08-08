@@ -89,7 +89,7 @@
                             <td>$invoice_number</td>
                             <td>$order_date</td>
                             <td>$order_status</td>
-                            <td><a href='confirm_payment.php' class='text-light'>Confirm</a></td>
+                            <td><a href='confirm_payment.php?order_id=$order_id' class='text-light'>Confirm</a></td>
                         </tr>
                     ";
                     $sl_number++;
