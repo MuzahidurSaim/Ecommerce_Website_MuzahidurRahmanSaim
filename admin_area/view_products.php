@@ -39,8 +39,8 @@
                         ?>
                     </td>
                     <td><?=$product_status;?></td>
-                    <td><a href='index.php?edit_products' class='text-light'><i class='fa-solid fa-pen-to-square'></i></a></td>
-                    <td><a href='index.php?delete_products' class='text-light'><i class='fa-solid fa-trash'></i></a></td>
+                    <td><a href='index.php?edit_products=<?=$product_id;?>' class='text-light'><i class='fa-solid fa-pen-to-square'></i></a></td>
+                    <td><a href='index.php?delete_products=<?=$product_id;?>' class='text-light'><i class='fa-solid fa-trash'></i></a></td>
                 </tr>
                 <?php
             }

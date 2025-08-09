@@ -462,3 +462,8 @@
 
 # part-66
 ## section-01
+    - go to the --> admin_area/edit_products.php
+    - edit php codes in this file --> so that the table dynamically shows; the data stored in the database
+
+# part-67
+## section-01
