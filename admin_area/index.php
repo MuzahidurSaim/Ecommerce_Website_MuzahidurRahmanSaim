@@ -38,6 +38,10 @@
             background-color: var(--bs-secondary);
             color: var(--bs-light);
         }
+        .product_img {
+            width: 100px;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>

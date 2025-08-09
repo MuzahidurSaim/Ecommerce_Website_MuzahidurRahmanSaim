@@ -452,3 +452,8 @@
 
 # part-64
 ## section-01
+    - go to the --> admin_area/view_products.php
+    - edit php codes in this file --> to display values in the table dynamically
+
+# part-65
+## section-01
