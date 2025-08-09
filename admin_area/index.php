@@ -1,9 +1,14 @@
+<?php
+    include('../includes/connect.php');
+    include('../functions/common_function.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>SAIM - Admin Dashboard</title>
 
     <!-- bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
@@ -14,9 +19,24 @@
     <!-- css file -->
     <link rel = "stylesheet" href = "../style.css">
     <style>
-        .footer {
-            position: absolute;
-            bottom: 0;
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        .logo {
+            width:4%;
+            height:2%;
+        }
+        .table_head th {
+            background-color: var(--bs-info);
+        }
+        .table_body td {
+            background-color: var(--bs-secondary);
+            color: var(--bs-light);
         }
     </style>
 </head>
@@ -55,15 +75,15 @@
                 </div>
                 <div class="button text-center">
                     <button><a href="insert_product.php" class="nav-link text-light bg-info m-1 p-2">Insert Products</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">View Products</a></button>
+                    <button><a href="index.php?view_products" class="nav-link text-light bg-info m-1 p-2">View Products</a></button>
                     <button><a href="index.php?insert_category" class="nav-link text-light bg-info m-1 p-2">Insert Categories</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">View Categories</a></button>
+                    <button><a href="index.php?view_categories" class="nav-link text-light bg-info m-1 p-2">View Categories</a></button>
                     <button><a href="index.php?insert_brand" class="nav-link text-light bg-info m-1 p-2">Insert Brands</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">View Brands</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">All Orders</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">All Payments</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">List Users</a></button>
-                    <button><a href="" class="nav-link text-light bg-info m-1 p-2">Logout</a></button>
+                    <button><a href="index.php?view_brands" class="nav-link text-light bg-info m-1 p-2">View Brands</a></button>
+                    <button><a href="index.php?all_orders" class="nav-link text-light bg-info m-1 p-2">All Orders</a></button>
+                    <button><a href="index.php?all_payments" class="nav-link text-light bg-info m-1 p-2">All Payments</a></button>
+                    <button><a href="index.php?list_users" class="nav-link text-light bg-info m-1 p-2">List Users</a></button>
+                    <button><a href="../index.php" class="nav-link text-light bg-info m-1 p-2">Logout</a></button>
                 </div>
             </div>
         </div>
@@ -71,19 +91,37 @@
         <!-- fourth child -->
         <div class="container my-3">
             <?php
+                if(isset($_GET['view_products'])) {
+                    include('view_products.php');
+                }
                 if(isset($_GET['insert_category'])) {
                     include('insert_categories.php');
+                }
+                if(isset($_GET['view_categories'])) {
+                    include('view_categories.php');
                 }
                 if(isset($_GET['insert_brand'])) {
                     include('insert_brands.php');
                 }
+                if(isset($_GET['view_brands'])) {
+                    include('view_brands.php');
+                }
+                if(isset($_GET['all_orders'])) {
+                    include('all_orders.php');
+                }
+                if(isset($_GET['all_payments'])) {
+                    include('all_payments.php');
+                }
+                if(isset($_GET['list_users'])) {
+                    include('list_users.php');
+                }
             ?>
         </div>
 
-        <!-- last child -->
-        <div class = "bg-info p-3 text-center footer">
-            <p>All rights reserved © Designed by Saim-2025</p>
-        </div>
+        <!-- include footer file -->
+        <?php
+            include("../includes/footer.php")
+        ?>
     </div>
 
     <!-- bootstrap js link -->

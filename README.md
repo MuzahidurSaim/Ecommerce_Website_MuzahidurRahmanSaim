@@ -445,5 +445,10 @@
     - create a new file --> users_area/delete_account.php
     - design this file --> so that user can delete their account if want
 
-# part-62
+# part-63
+## section-01
+    - create a new file --> admin_area/view_products.php
+    - design the static layout for this page --> to display all the products to the "Admin Dashboard"
+
+# part-64
 ## section-01
