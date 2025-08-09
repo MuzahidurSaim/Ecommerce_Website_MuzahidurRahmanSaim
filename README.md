@@ -472,3 +472,8 @@
 
 # part-68
 ## section-01
+    - go to the --> admin_area/delete_products.php
+    - write simple php codes here --> so that the admin can delete any product from the database
+
+# part-69
+## section-01
