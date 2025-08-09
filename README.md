@@ -467,3 +467,8 @@
 
 # part-67
 ## section-01
+    - go to the --> admin_area/edit_products.php
+    - write php codes in this page --> so that the newly given data is stored in the database
+
+# part-68
+## section-01
