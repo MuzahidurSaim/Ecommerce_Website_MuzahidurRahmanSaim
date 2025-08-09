@@ -493,3 +493,11 @@
 
 # part-71
 ## section-01
+    - go to the --> admin_area/delete_category.php
+    - write simple php codes here --> so that when admin clicks on the "delete" option it removes the category
+## section-02
+    - go to the --> admin_area/delete_brand.php
+    - write simple php codes here --> so that when admin clicks on the "delete" option it removes the brand
+
+# part-72
+## section-01
