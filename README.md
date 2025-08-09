@@ -442,3 +442,8 @@
 
 # part-61
 ## section-01
+    - create a new file --> users_area/delete_account.php
+    - design this file --> so that user can delete their account if want
+
+# part-62
+## section-01
