@@ -477,3 +477,11 @@
 
 # part-69
 ## section-01
+    - go to the --> admin_area/view_categories.php
+    - write php codes --> to display all the "categories" in this page
+## section-02
+    - go to the --> admin_area/view_brands.php
+    - write php codes --> to display all the "brands" in this page
+
+# part-70
+## section-01
