@@ -457,3 +457,8 @@
 
 # part-65
 ## section-01
+    - go to the --> admin_area/edit_products.php
+    - design the static layout of this file --> so that admin can edit a product
+
+# part-66
+## section-01
