@@ -485,3 +485,11 @@
 
 # part-70
 ## section-01
+    - go to the --> admin_area/edit_category.php
+    - write php codes in this file --> so that admin can edit their "category" names
+## section-02
+    - go to the --> admin_area/edit_brand.php
+    - write php codes in this file --> so that admin can edit their "brand" names
+
+# part-71
+## section-01

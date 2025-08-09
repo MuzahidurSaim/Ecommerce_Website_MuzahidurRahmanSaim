@@ -53,7 +53,7 @@
         $result_update=mysqli_query($con, $update_product);  // error shown here
         if($result_update) {
             echo "<script>alert('Product updated successfully')</script>";
-            echo "<script>window.open('./index.php', '_self')</script>";
+            echo "<script>window.open('./index.php?view_products', '_self')</script>";
         }
     }
 ?>
