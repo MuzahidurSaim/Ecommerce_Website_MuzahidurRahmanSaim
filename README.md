@@ -501,3 +501,14 @@
 
 # part-72
 ## section-01
+    - https://www.youtube.com/watch?v=uUmf9h0vOQ8&list=PL-h5aNeRKouEaGrQj6EXaqZsagEphQboI&index=74
+
+# part-73
+## section-01
+    - go to the --> admin_area/all_orders.php
+    - write php codes for the --> displaying all orders to the admin dashboard
+    - create a new file --> admin_area/delete_order.php
+    - include this to the --> admin_area\index.php
+
+# part-74
+## section-01

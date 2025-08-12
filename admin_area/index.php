@@ -131,6 +131,9 @@
                 if(isset($_GET['all_orders'])) {
                     include('all_orders.php');
                 }
+                if(isset($_GET['delete_order'])) {
+                    include('delete_order.php');
+                }
                 if(isset($_GET['all_payments'])) {
                     include('all_payments.php');
                 }
