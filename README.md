@@ -527,7 +527,17 @@
 # part-76
 ## section-01
     - create two new files --> "admin_area/admin_registration.php" and "admin_area/admin_login.php"
-    - design the basic layout for the --> "Admin Registration" page
+    - design the basic layout for the --> "Admin Registration" and "Admin Layout" page
 
 # part-77
 ## section-01
+    - create a new table --> admin_table
+    - create a new column --> admin_id [int, primary, auto increment]
+    - create a new column --> admin_name [varchar, 255]
+    - create a new column --> admin_email [varchar, 255]
+    - create a new column --> admin_password [varchar, 255]
+
+# part-78
+## section-01
+    - hosting website for free in "infinity free" or "000webhost"
+    - END

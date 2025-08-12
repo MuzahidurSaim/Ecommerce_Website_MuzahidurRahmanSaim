@@ -96,7 +96,7 @@
             <h2 class="text-center mb-5">Admin Registration</h2>
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6 col-xl-6">
-                    <img src="../images/admin_register.jpg" alt="Admin Register" class="img-fluid">
+                    <img src="../images/admin_register.jpg" alt="Admin Registration" class="img-fluid">
                 </div>
                 <div class="col-lg-6 col-xl-4">
                     <form action="" method="post">
@@ -117,7 +117,7 @@
                             <input type="password" id="confirm_password" name="confirm_password" placeholder="Enter your password again" required="required" class="form-control">
                         </div>
                         <div>
-                            <input type="submit" class="bg-info py-2 px-3 border-0" name="admin_register" value="Register">
+                            <input type="submit" class="bg-info py-2 px-3 border-0" name="admin_registration" value="Register">
                             <p class="small fw-bold mt-2 pt-1">Already have an account? <a href="admin_login.php">Login</a></p>
                         </div>
                     </form>
