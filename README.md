@@ -501,8 +501,9 @@
 
 # part-72
 ## section-01
-    - https://www.youtube.com/watch?v=uUmf9h0vOQ8&list=PL-h5aNeRKouEaGrQj6EXaqZsagEphQboI&index=74
-
+    - go to the --> "admin_area/view_brands.php"
+    - add the bootstrap modal option --> for displaying "Confirmation" message before deleting
+    
 # part-73
 ## section-01
     - go to the --> admin_area/all_orders.php
