@@ -526,3 +526,8 @@
 
 # part-76
 ## section-01
+    - create two new files --> "admin_area/admin_registration.php" and "admin_area/admin_login.php"
+    - design the basic layout for the --> "Admin Registration" page
+
+# part-77
+## section-01
