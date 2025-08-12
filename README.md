@@ -512,3 +512,10 @@
 
 # part-74
 ## section-01
+    - go to the --> admin_area/all_payments.php
+    - write php codes for the --> displaying all payments to the admin dashboard
+    - create a new file --> admin_area/delete_payment.php
+    - include this to the --> admin_area\index.php
+
+# part-75
+## section-01

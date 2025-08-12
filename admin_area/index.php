@@ -137,6 +137,9 @@
                 if(isset($_GET['all_payments'])) {
                     include('all_payments.php');
                 }
+                if(isset($_GET['delete_payment'])) {
+                    include('delete_payment.php');
+                }
                 if(isset($_GET['list_users'])) {
                     include('list_users.php');
                 }
