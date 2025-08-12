@@ -519,3 +519,10 @@
 
 # part-75
 ## section-01
+    - go to the --> admin_area/all_users.php
+    - write php codes for the --> displaying all users to the admin dashboard
+    - create a new file --> admin_area/delete_user.php
+    - include this to the --> admin_area\index.php
+
+# part-76
+## section-01

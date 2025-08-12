@@ -86,7 +86,7 @@
                     <button><a href="index.php?view_brands" class="nav-link text-light bg-info m-1 p-2">View Brands</a></button>
                     <button><a href="index.php?all_orders" class="nav-link text-light bg-info m-1 p-2">All Orders</a></button>
                     <button><a href="index.php?all_payments" class="nav-link text-light bg-info m-1 p-2">All Payments</a></button>
-                    <button><a href="index.php?list_users" class="nav-link text-light bg-info m-1 p-2">List Users</a></button>
+                    <button><a href="index.php?all_users" class="nav-link text-light bg-info m-1 p-2">All Users</a></button>
                     <button><a href="../index.php" class="nav-link text-light bg-info m-1 p-2">Logout</a></button>
                 </div>
             </div>
@@ -140,8 +140,11 @@
                 if(isset($_GET['delete_payment'])) {
                     include('delete_payment.php');
                 }
-                if(isset($_GET['list_users'])) {
-                    include('list_users.php');
+                if(isset($_GET['all_users'])) {
+                    include('all_users.php');
+                }
+                if(isset($_GET['delete_user'])) {
+                    include('delete_user.php');
                 }
             ?>
         </div>
