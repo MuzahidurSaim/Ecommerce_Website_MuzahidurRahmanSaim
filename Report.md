@@ -3,16 +3,19 @@ Ecommerce_Website/
 ├── admin_area/
 │   ├── product_images/
 │   ├── admin_login.php
+│   ├── admin_logout.php
 │   ├── admin_registration.php
 │   ├── all_orders.php
 │   ├── all_payments.php
 │   ├── all_users.php
+│   ├── delete_admin.php
 │   ├── delete_brand.php
 │   ├── delete_category.php
 │   ├── delete_order.php
 │   ├── delete_payment.php
 │   ├── delete_products.php
 │   ├── delete_user.php
+│   ├── edit_admin.php
 │   ├── edit_brand.php
 │   ├── edit_category.php
 │   ├── edit_products.php
@@ -208,6 +211,14 @@ Ecommerce_Website/
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
+
+# admin_logout.php
+<?php
+    session_start();
+    session_unset();
+    session_destroy();
+    echo "<script>window.open('../index.php', '_self')</script>";
+?>
 
 # admin_registration.php
 <?php
@@ -473,6 +484,44 @@ Ecommerce_Website/
     </tbody>
 </table>
 
+# delete_admin.php
+<h3 class="text-danger my-4 text-center">Delete Account</h3>
+<form action="" method="post" class="mt-5">
+    <div class="form-outline mb-4">
+        <input type="submit" class="form-control w-50 m-auto" name="delete" value="Delete Account">
+    </div>
+    <div class="form-outline mb-4">
+        <input type="submit" class="form-control w-50 m-auto" name="do_not_delete" value="Don't Delete Account">
+    </div>
+</form>
+
+<?php
+if (isset($_SESSION['username'])) {
+    $username_session = $_SESSION['username'];
+
+    if (isset($_POST['delete'])) {
+        $delete_query = "DELETE FROM `admin_table` WHERE admin_name='$username_session'";
+        $result = mysqli_query($con, $delete_query);
+        if ($result) {
+            session_destroy();
+            echo "<script>alert('Account deleted successfully');</script>";
+            echo "<script>window.open('../index.php', '_self');</script>";
+        } else {
+            echo "<script>alert('Failed to delete account');</script>";
+        }
+    }
+
+    if (isset($_POST['do_not_delete'])) {
+        echo "<script>alert('Account deletion cancelled');</script>";
+        echo "<script>window.open('index.php', '_self');</script>";
+    }
+} else {
+    echo "<script>alert('No admin session found');</script>";
+    echo "<script>window.open('../index.php', '_self');</script>";
+}
+?>
+
+
 # delete_brand.php
 <?php
     if(isset($_GET['delete_brand'])) {
@@ -550,6 +599,61 @@ Ecommerce_Website/
         }
     }
 ?>
+
+# edit_admin.php
+<?php
+if (isset($_GET['edit_admin']) && isset($_SESSION['username'])) {
+    $user_session_name = $_SESSION['username'];
+    $select_query = "SELECT * FROM `admin_table` WHERE admin_name='$user_session_name'";
+    $result_query = mysqli_query($con, $select_query);
+    $row_fetch = mysqli_fetch_assoc($result_query);
+    $admin_id = $row_fetch['admin_id'];
+    $admin_name = $row_fetch['admin_name'];
+    $admin_email = $row_fetch['admin_email'];
+}
+
+if (isset($_POST['admin_update'])) {
+    $update_id = $admin_id;
+    $admin_name = trim($_POST['username']);
+    $admin_email = trim($_POST['email']);
+
+    if ($admin_name !== '' && $admin_email !== '') {
+        $update_data = "UPDATE `admin_table` SET admin_name='$admin_name', admin_email='$admin_email' WHERE admin_id=$update_id";
+        $result_query_update = mysqli_query($con, $update_data);
+        if ($result_query_update) {
+            echo "<script>alert('Data updated successfully');</script>";
+            echo "<script>window.open('admin_logout.php', '_self');</script>";
+        } else {
+            echo "<script>alert('Update failed');</script>";
+        }
+    } else {
+        echo "<script>alert('Please fill in all fields');</script>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SAIM - Edit account <?= htmlspecialchars($_SESSION['username'] ?? 'Admin') ?></title>
+    <!-- Bootstrap and CSS links unchanged -->
+</head>
+<body>
+    <h3 class="text-success my-4 text-center">Edit Account</h3>
+    <form action="" method="post">
+        <div class="form-outline mb-4">
+            <input type="text" class="form-control w-50 m-auto" name="username" value="<?= htmlspecialchars($admin_name ?? '') ?>">
+        </div>
+        <div class="form-outline mb-4">
+            <input type="email" class="form-control w-50 m-auto" name="email" value="<?= htmlspecialchars($admin_email ?? '') ?>">
+        </div>
+        <div class="w-50 m-auto py-2">
+            <input type="submit" value="Update" class="bg-info py-2 px-3 border-0 m-auto " name="admin_update">
+        </div>
+    </form>
+</body>
+</html>
+
 
 # edit_brand.php
 <?php
@@ -757,6 +861,13 @@ Ecommerce_Website/
     include('../includes/connect.php');
     include('../functions/common_function.php');
     session_start();
+
+    // Redirect if not logged in
+    if (!isset($_SESSION['username'])) {
+        echo "<script>alert('Please login first');</script>";
+        echo "<script>window.open('admin_login.php', '_self');</script>";
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -764,7 +875,7 @@ Ecommerce_Website/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAIM - Welcome <?=$_SESSION['username']?></title>
+    <title>SAIM - Welcome <?= htmlspecialchars($_SESSION['username']) ?></title>
 
     <!-- bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
@@ -830,20 +941,22 @@ Ecommerce_Website/
         <div class="row">
             <div class="col-md-12 bg-secondary p-1 d-flex align-items-center">
                 <div class="p-3">
-                    <a href="#"><img src="../images/mango.jpg" alt="" class="admin_image"></a>
-                    <p class="text-light text-center">Admin Name</p>
+                    <a href="#"><img src="../images/mango.jpg" alt="Admin Profile" class="admin_image"></a>
+                    <p class="text-light text-center"><?= htmlspecialchars($_SESSION['username']) ?></p>
                 </div>
                 <div class="button text-center">
                     <button><a href="insert_product.php" class="nav-link text-light bg-info m-1 p-2">Insert Products</a></button>
                     <button><a href="index.php?view_products" class="nav-link text-light bg-info m-1 p-2">View Products</a></button>
-                    <button><a href="index.php?insert_category" class="nav-link text-light bg-info m-1 p-2">Insert Categories</a></button>
+                    <button><a href="index.php?insert_categories" class="nav-link text-light bg-info m-1 p-2">Insert Categories</a></button>
                     <button><a href="index.php?view_categories" class="nav-link text-light bg-info m-1 p-2">View Categories</a></button>
-                    <button><a href="index.php?insert_brand" class="nav-link text-light bg-info m-1 p-2">Insert Brands</a></button>
+                    <button><a href="index.php?insert_brands" class="nav-link text-light bg-info m-1 p-2">Insert Brands</a></button>
                     <button><a href="index.php?view_brands" class="nav-link text-light bg-info m-1 p-2">View Brands</a></button>
                     <button><a href="index.php?all_orders" class="nav-link text-light bg-info m-1 p-2">All Orders</a></button>
                     <button><a href="index.php?all_payments" class="nav-link text-light bg-info m-1 p-2">All Payments</a></button>
                     <button><a href="index.php?all_users" class="nav-link text-light bg-info m-1 p-2">All Users</a></button>
-                    <button><a href="../index.php" class="nav-link text-light bg-info m-1 p-2">Logout</a></button>
+                    <button><a href="index.php?edit_admin" class="nav-link text-light bg-info m-1 p-2">Edit Admin</a></button>
+                    <button><a href="index.php?admin_logout" class="nav-link text-light bg-info m-1 p-2">Logout</a></button>
+                    <button><a href="index.php?delete_admin" class="nav-link text-light bg-info m-1 p-2">Delete Admin</a></button>
                 </div>
             </div>
         </div>
@@ -851,56 +964,19 @@ Ecommerce_Website/
         <!-- fourth child -->
         <div class="container my-3">
             <?php
-                if(isset($_GET['view_products'])) {
-                    include('view_products.php');
-                }
-                if(isset($_GET['edit_products'])) {
-                    include('edit_products.php');
-                }
-                if(isset($_GET['delete_products'])) {
-                    include('delete_products.php');
-                }
-                if(isset($_GET['insert_category'])) {
-                    include('insert_categories.php');
-                }
-                if(isset($_GET['view_categories'])) {
-                    include('view_categories.php');
-                }
-                if(isset($_GET['edit_category'])) {
-                    include('edit_category.php');
-                }
-                if(isset($_GET['delete_category'])) {
-                    include('delete_category.php');
-                }
-                if(isset($_GET['insert_brand'])) {
-                    include('insert_brands.php');
-                }
-                if(isset($_GET['view_brands'])) {
-                    include('view_brands.php');
-                }
-                if(isset($_GET['edit_brand'])) {
-                    include('edit_brand.php');
-                }
-                if(isset($_GET['delete_brand'])) {
-                    include('delete_brand.php');
-                }
-                if(isset($_GET['all_orders'])) {
-                    include('all_orders.php');
-                }
-                if(isset($_GET['delete_order'])) {
-                    include('delete_order.php');
-                }
-                if(isset($_GET['all_payments'])) {
-                    include('all_payments.php');
-                }
-                if(isset($_GET['delete_payment'])) {
-                    include('delete_payment.php');
-                }
-                if(isset($_GET['all_users'])) {
-                    include('all_users.php');
-                }
-                if(isset($_GET['delete_user'])) {
-                    include('delete_user.php');
+                $allowed_pages = [
+                    'view_products', 'edit_products', 'delete_products',
+                    'insert_categories', 'view_categories', 'edit_category', 'delete_category',
+                    'insert_brands', 'view_brands', 'edit_brand', 'delete_brand',
+                    'all_orders', 'delete_order', 'all_payments', 'delete_payment',
+                    'all_users', 'delete_user', 'edit_admin', 'admin_logout', 'delete_admin'
+                ];
+
+                foreach ($allowed_pages as $page) {
+                    if (isset($_GET[$page])) {
+                        include("$page.php");
+                        break;
+                    }
                 }
             ?>
         </div>
