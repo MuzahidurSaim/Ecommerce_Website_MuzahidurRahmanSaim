@@ -5,32 +5,23 @@
     include_once('../functions/common_function.php');
 
     /* storing registration information into the database */
-    if(isset($_POST['admin_register'])) {
-        $admin_adminname=$_POST['admin_adminname'];
-        $admin_adminemail=$_POST['admin_adminemail'];
-        $admin_conf_adminpassword=$_POST['admin_conf_adminpassword'];
-        $admin_adminaddress=$_POST['admin_adminaddress'];
-        $admin_admincontact=$_POST['admin_admincontact'];
-        $admin_adminip=getAdminIpAddress();
+    if(isset($_POST['admin_registration'])) {
+        $username=$_POST['username'];
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+        $hash_password=password_hash($password, PASSWORD_DEFAULT);
+        $confirm_password=$_POST['confirm_password'];
 
-        $admin_adminpassword=$_POST['admin_adminpassword'];
-        $admin_hash_adminpassword=password_hash($admin_adminpassword, PASSWORD_DEFAULT);
-
-        $admin_adminimage=$_FILES['admin_adminimage']['name'];
-        $admin_tmp_adminimage=$_FILES['admin_adminimage']['tmp_name'];
-
-        $select_query="SELECT * FROM `admin_table` WHERE admin_name='$admin_adminname' or admin_email='$admin_adminemail'";
+        $select_query="SELECT * FROM `admin_table` WHERE admin_name='$username' or admin_email='$email'";
         $result=mysqli_query($con, $select_query);
         $rows_count=mysqli_num_rows($result);
 
         if($rows_count>0) {
-            echo "<script>alert('Adminname or Email already exists')</script>";
-        } else if($admin_adminpassword != $admin_conf_adminpassword) {
+            echo "<script>alert('Username or Email already exists')</script>";
+        } else if($password != $confirm_password) {
             echo "<script>alert('Passwords do not match')</script>";
         } else {
-            move_uploaded_file($admin_tmp_adminimage, "./admin_images/$admin_adminimage");
-
-            $insert_query="INSERT INTO `admin_table` (admin_name, admin_email, admin_password, admin_image, admin_ip, admin_address, admin_mobile) VALUES ('$admin_adminname', '$admin_adminemail', '$admin_hash_adminpassword', '$admin_adminimage', '$admin_adminip', '$admin_adminaddress', '$admin_admincontact')";
+            $insert_query="INSERT INTO `admin_table` (admin_name, admin_email, admin_password) VALUES ('$username', '$email', '$hash_password')";
             $sql_execute=mysqli_query($con, $insert_query);
 
             if($sql_execute) {
@@ -39,21 +30,7 @@
                 die(mysqli_error($con));
             }
         }
-
-        /* checking if the admin has added items in the cart before login */
-        $select_cart_items="SELECT * FROM `cart_details` WHERE ip_address='$admin_adminip'";
-        $result_cart=mysqli_query($con, $select_cart_items);
-        $rows_count=mysqli_num_rows($result_cart);
-
-        if($rows_count>0) {
-            $_SESSION['adminname']=$admin_adminname;
-            echo "<script>alert('You have items in your cart')</script>";
-            echo "<script>window.open('checkout.php', '_self')</script>";
-        } else {
-            echo "<script>window.open('../index.php', '_self')</script>";
-        }
     }
-
 ?>
 
 <!DOCTYPE html>
