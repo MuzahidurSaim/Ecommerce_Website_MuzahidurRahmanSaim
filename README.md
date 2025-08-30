@@ -1,544 +1,186 @@
-# Ecommerce-Website
-
-# part-9
-## section-01
-    - got to --> http://localhost/phpmyadmin
-    - create a new database --> mystore
-    - create a new table --> categories
-        - create a new column --> category_id [auto increment, primary key, int]
-        - creare a new column --> category_title [varchar, 100]
-        - save
-    - create a new table --> brands
-        - create a new column --> brand_id [auto increment, primary key, int]
-        - creare a new column --> brand_title [varchar, 100]
-        - save
-## section-02
-    - create a new folder in project root directory --> includes
-    - create a new file inside that directory --> connect.php
-    - check the connection --> http://localhost/Ecommerce%20Website/includes/connect.php
-## section-03
-    - go to --> insert_categories.php
-    - include to it, the file --> connect.php
-    - change the file to not show the connection message everytime --> connect.php
-
-# part-10
-## section-01
-    - how to insert categories --> insert_categories.php
-    - change the --> Insert Categories <-- part
-## section-02
-    - how to insert distinct values to the database --> insert_categories.php <-- in the php part
-
-# part-11
-## section-01
-    - how to insert distinct brand values to the database --> insert_brands.php <-- do the same as the part-10
-
-# part-12
-## section-01
-    - connect the database (connect.php) file at the top of the root index file --> index.php
-    - make php changes in "fourth child" -> "side nav" -> "brands to be displyed" -> "Delivery Brands" --> index.php
-## section-02
-    - do the same for the categories
-    - make php changes in "fourth child" -> "side nav" -> "categories to be displyed" -> "Categories" --> index.php
-
-# part-13
-## section-01
-    - create a new file inside the directory --> admin_area
-    - name the file as --> insert_product.php
-    - add the page link to the "third child" -> "Insert Products" link --> admin_area/index.php
-## section-02
-    - edit the file --> admin_area/insert_product.php
-
-# part-14
-## section-01
-    - connect the database with the file --> admin_area/insert_product.php
-## section-02
-    - make php changes to show the database's categories --> "categories" <-- go inside it
-    - make php changes to show the database's brands --> "brands" <-- go inside it
-
-# part-15
-## section-01
-    - create a new table named --> products
-## section-02
-    - create a new column named --> product_id [int, primary key, auto increment]
-    - create a new column named --> product_title [varchar 100]
-    - create a new column named --> product_description [varchar 255]
-    - create a new column named --> product_keywords [varchar 255]
-    - create a new column named --> category_id [int]
-    - create a new column named --> brand_id [int]
-    - create a new column named --> product_image1 [varchar 255]
-    - create a new column named --> product_image2 [varchar 255]
-    - create a new column named --> product_image3 [varchar 255]
-    - create a new column named --> product_price [varchar 100]
-    - create a new column named --> product_date [timestamp]
-    - create a new column named --> product_status [varchar 100]
-
-# part-16
-## section-01
-    - go to the file --> admin_area/insert_product.php
-    - make php changes at the top to insert values in the database from the "Insert Product" page-->
-    - create a new folder inside the directory --> admin_area
-    - name the directory as --> product_images
-
-# part-17
-## section-01
-    - go to the root file --> index.php <-- to show the values in the "home page" from the "database"
-    - make php changes in the "fourth child" -> "products" --> fetching products
-
-# part-18
-## section-01
-    - create common functions to reduce the coding time
-    - create a new folder in the root directory named --> functions
-    - create a new file inside that directory named --> common_function.php
-## section-02
-    - modify the php changes in --> functions/common_function.php
-    - include this function php file at the top of root --> index.php
-    - create functions --> getProducts(), getBrands(), getCategories()
-
-# part-19
-## section-01
-    - go to --> functions/common_function.php
-    - modify getProducts() --> so that when choosing a brand/category it will only show that brand/category page
-    - to do that add two more functions --> getUniqueCategories() and getUniqueBrands() <-- after the getProducts() inside the root index.php file
-
-# part-20
-## section-01
-    - go to the root --> index.php
-    - modify "first child" -> "navbar" --> Home and Products <-- page
-## section-02
-    - create a new file in the root directory named --> display_all.php
-    - create a new file in the "includes" directory --> footer.php
-    - write the footer div code
-    - include this footer.php file to all the pages's "footer" section
-## section-03
-    - to show the all products go to the --> display_all.php
-    - copy paste the entire code in this file from the root --> index.php
-## section-04
-    - go to the --> functions/common_function.php
-    - create a new function to show all the products without any limits --> getAllProducts()
-    - add this function instead of "getProducts()" inside --> display_all.php
-
-# part-21
-## section-01
-    - go to root --> index.php
-    - go to "first child" > "navbar" > "Search"
-    - replace the search "button" to --> "input" field
-## section-02
-    - create a new file in the root directory --> search_product.php
-    - copy paste the entire code to it from root --> index.php
-    - make php changes to the "fourth child" > "products" > "fetching products" --> replace getProducts() with searchProducts()
-## section-03
-    - go to the --> functions/common_function.php
-    - create a new function same as getProducts() with minor change with the query and if conditionn --> searchProducts()
-
-# part-22
-## section-01
-    - go to -> "functions/common_function.php" and change all the links for the page --> view more
-    - link the "product_details.php" file/page to this --> view more <-- button
-## section-02
-    - create a new file in the root directory --> product_details.php
-    - copy paste the entire code to it from --> index.php
-    - remove the "getProducts()" function from --> fetching products <-- section
-## section-03
-    - above the "fetching products" section create the layout for the --> view more <-- page
-    - we'll make it dynamic in the next part
-
-# part-23
-## section-01
-    - go to the --> functions/common_function.php
-    - create a new function --> viewDetails()
-    - same as the getProducts() except this is under a new if condition to get the product value and few more changes in the output
-    - change the "view more" button to "Go Home" and link it to the page --> index.php
-## sectino-02
-    - go to the --> product_details.php
-    - trasfer the the part from "fourth child" > "products" > "main product's card" and "related images" to the --> viewDetails()
-
-# part-24
-## section-01
-    - create a new table --> cart_details
-    - create a new column --> product_id [int, primary key]
-    - create a new collumn --> ip_address [varchar, 255]
-    - create a new column --> quantity [int, 100]
-## section-02
-    - copy the function for getting ip address in php --> from online
-    - go to the --> functions/common_function.php
-    - create a new function --> getUserIpAddress()
-    - paste the function code copied from online
-    - we have to get the ip address for "cart" page since, there will be many orders from many users at the same time
-
-# part-25
-## section-01
-    - go to --> functions/common_function.php
-    - create a new function --> cart()
-    - change all the "Add to Cart" --> link it to the "add_to_cart" command of the index.php file/page
-    - call the function "cart()" anywhere from the --> index.php
-
-# part-26
-## section-01
-    - go to --> functions/common_function.php
-    - create a new function --> cartItems()
-    - change the cart number to dynamic > "first child" > "navbar" > "sup" --> calling the "cartItems()" function in "index.php", "product_details.php", "search_product.php", "display_all.php"
-
-# part-27
-## section-01
-    - add the product price in every function after the <p> tag in the --> functions/common_function.php
-
-# part-28
-## section-01
-    - go to the --> functions/common_function.php
-    - create a new function --> cartTotalPrice()
-    - modify the the function to calculate the total price of each user/ip address
-    - change the cart total price to dynamic > "first child" > "navbar" > "Total Price" --> calling the "cartTotalPrice()" function in "index.php", "product_details.php", "search_product.php", "display_all.php"
-
-# part-29
-## section-01
-    - create a new file in the root directory --> cart.php
-    - go to "index.php", "product_details.php", "search_product.php", "display_all.php" --> and change the link to this page in the "cartItems()" part
-    - copy paste here the entire code from --> index.php
-## section-02
-    - remove the "total price" and "form" option from --> "cart.php" ~ "first child" ~ "navbar"
-    - replace the parts of "fourth child" with the cart page "table" layout inside the --> cart.php
-
-# part-30
-## section-01
-    - go to the --> cart.php
-    - make php changes inside the --> "fourth child" ~ "tbody"
-
-# part-31
-## section-01
-    - go to --> cart.php
-    - create a form inside --> "fourth child" ~ "container" ~ "row"
-    - make php changes inside the --> "tbody"
-
-# part-32
-## section-01
-    - go to the --> cart.php
-    - modify the "remove" button option
-    - then make php changes for the remove function in the --> cart page
-    - also create a new function there --> remove_cart_item() to remove the items
-
-# part-33
-## section-01
-    - go to the --> cart.php
-    - make changes inside --> "fourth child" ~ "form" ~ "table"
-
-# part-34
-## section-01
-    - go to the --> cart.php
-    - make changes near --> "fourth child" ~ "form" ~ "table" ~ "Checkout"
-    - create a new php file --> checkout.php
-    - copy paste the entire code here --> from "index.php"
-    - make neccessary changes inside it
-## section-02
-    - create two new php files --> "payment.php" and "users_area/user_login.php"
-    - then we introduce php "session" for payment option inside the --> checkout.php
-
-# part-35
-## section-01
-    - first create a page --> "sessions.php" for logging in
-        <!--
-            <?php
-                session_start();
-                $_SESSION['username']="Saim";
-                $_SESSION['password']="coding";
-                echo "Session/login data is saved";
-            ?>
-        -->
-## section-02
-    - then create a page --> "information.php" for storing the user information
-        <!--
-            <?php
-                session_start();
-                if(isset($_SESSION['username'])) {
-                    echo "Welcome ".$_SESSION['username'];
-                    echo "<br>";
-                    echo "And your password is ".$_SESSION['password'];
-                } else {
-                    echo "Please login again to continue";
-                }
-            ?>
-        -->
-## section-03
-    - at last create a page --> "logout.php" for logging out
-        <!--
-            <?php
-                session_start();
-                session_unset();
-                session_destroy();
-                echo "Informations are destroyed";
-            ?>
-        -->
-## section-04
-    - then check the pages by visiting them in order
-        <!--
-            http://localhost/test_project/sessions.php
-            http://localhost/test_project/information.php
-            http://localhost/test_project/logout.php
-        -->
-
-# part-36
-## section-01
-    - create a new database table --> user_table
-    - create a new column --> user_id [int, auto increment, primary]
-    - create a new column --> user_name [varchar, 100]
-    - create a new column --> user_email [varchar, 100]
-    - create a new column --> user_password [varchar, 255]
-    - create a new column --> user_image [varchar, 255]
-    - create a new column --> user_ip [varchar, 255]
-    - create a new column --> user_address [varchar, 255]
-    - create a new column --> user_mobile [varchar, 20]
-
-# part-37
-## section-01
-    - create a new file --> users_area/user_registration.php
-    - modify the file to create the layout of the --> "registration" page
-
-# part-38
-## section-01
-    - go to the --> "users_area/user_login.php" file
-    - copy paste the entire code here from --> users_area/user_registration.php
-    - modify the file accordingly
-    - link the "login" and "registration" files to the --> "index.php", "display_all.php", "product_details.php", "cart.php" files
-
-# part-39
-## section-01
-    - connect the database "includes/connect.php" with the --> "users_area/user_registration.php" file
-    - create a new folder to store the user provided images --> users_area/user_images
-    - make php changes in this file to store the register information inside the database
-
-# part-40
-## section-01
-    - go to the --> users_area/user_registration.php
-    - make php changes to check conditions for the --> name, email, passwords
-
-# part-41
-## section-01
-    - go to the --> users_area/user_registration.php
-    - make php changes to store the passwords in the database as --> password hashing
-    - password hashing --> encrypting passwords
-    - password hash documentation --> https://www.php.net/manual/en/function.password-hash.php
-
-# part-42
-## section-01
-    - go to the --> users_area/user_registration.php
-    - make php changes to check whether the user added items in the cart before --> logging in
-
-# part-43
-## section-01
-    - go to the --> users_area/user_login.php
-    - make php changes to --> check whether the "username" and "password" matches with our database or not
-
-# part-44
-## section-01
-    - go to the --> users_area/user_login.php
-    - create a new file --> users_area/profile.php
-    - move "payment.php" inside --> users_area
-    - make php changes to the "users_area/user_login.php" file --> so that it will redirect to "users_area/payment.php" page if there are items in the cart, or to the "users_area/profile.php" page if the cart is empty.
-
-# part-45
-## section-01
-    - linked all the pages to their relative pages
-
-# part-46
-## section-01
-    - adding logout logic inside each file
-
-# part-47
-## section-01
-    - worked on the logout page
-
-# part-48
-## section-01
-    - go to the --> users_area\payment.php
-    - create a new file --> users_area\order.php
-    - design the payment page accordingly for payment layout
-
-# part-49
-## section-01
-    - create a new table --> user_orders
-    - create a new column --> order_id [int, primary, auto increment]
-    - create a new column --> user_id [int]
-    - create a new column --> amount_due [int, 255]
-    - create a new column --> invoice_number [int, 255]
-    - create a new column --> total_products [int, 255]
-    - create a new column --> order_date [timestamp]
-    - create a new column --> order_status [varchar, 255]
-## section-02
-    - create a new table --> orders_pending
-    - create a new column --> order_id [int, primary, auto increment]
-    - create a new column --> user_id [int]
-    - create a new column --> invoice_number [int, 255]
-    - create a new column --> product_id [int]
-    - create a new column --> quantity [int, 255]
-    - create a new column --> order_status [varchar, 255]
-
-# part-50
-## section-01
-    - go to the --> users_area/order.php
-    - write php codes to get access to the user ip address and their total order items with total price from database
-
-# part-51
-## section-01
-    - go to the --> users_area/order.php
-    - modify the php codes --> to get order "quantity" "from the cart and also storing those values of the order to the "user_orders" table
-
-# part-52
-## section-01
-    - go to the --> users_area/order.php
-    - make php changes so that the cart items are removed automatically, after placing an order by clicking on "Pay Offline" button
-    - and also, when placing orders; the data is added to both "orders_pending" and "user_orders" table simultaniously
-    - Issue!! --> in "orders_pending" table; only one product is added to the database
-
-# part-53
-## section-01
-    - go to the --> users_area/profile.php
-    - design this file as the --> user "dashboard"
-
-# part-54
-## section-01
-    - go to the --> users_area/profile.php
-    - modify the php code --> to fetch the user image in the dashboard
-    - also add proper links to the dashboard options
-
-# part-55
-## section-01
-    - go to the --> functions/common_function.php
-    - create a new function --> get_user_order_details() <-- to get the data of the orders that user has in their cart
-    - call that function inside --> users_area/profile.php --> fourth child --> div
-
-# part-56
-## section-01
-    - go to the --> users_area/profile.php
-    - include in the "fourth child" the file --> users_area/edit_account.php
-    - design the file --> users_area/edit_account.php
-
-# part-57
-## section-01
-    - go to the --> users_area/edit_account.php
-    - add php codes to it --> so that the user given new data updates the database
-
-# part-58
-## section-01
-    - create a new file --> users_area/user_orders.php
-    - include this file to the --> users_area/profile.php
-    - design the "user_orders" file --> to display the ordered items of the user; in the user "Dashboard"
-
-# part-59
-## section-01
-    - create a new file --> users_area/confirm_payment.php
-    - design this file --> for the user to select payment options and pay
-
-# part-60
-## section-01
-    - create a new table --> user_payments
-    - create a new column --> payment_id [int, primary, auto increment]
-    - create a new column --> order_id [int]
-    - create a new column --> invoice_number [int]
-    - create a new column --> amount [int]
-    - create a new column --> payment_mode [varchar, 255]
-    - create a new column --> date [timestamp]
-## section-02
-    - go to the --> users_area/confirm_payment.php
-    - make php changes --> so that when the user pays for the order; it will update the "user_payments" table in the database
-
-# part-61
-## section-01
-    - create a new file --> users_area/delete_account.php
-    - design this file --> so that user can delete their account if want
-
-# part-63
-## section-01
-    - create a new file --> admin_area/view_products.php
-    - design the static layout for this page --> to display all the products to the "Admin Dashboard"
-
-# part-64
-## section-01
-    - go to the --> admin_area/view_products.php
-    - edit php codes in this file --> to display values in the table dynamically
-
-# part-65
-## section-01
-    - go to the --> admin_area/edit_products.php
-    - design the static layout of this file --> so that admin can edit a product
-
-# part-66
-## section-01
-    - go to the --> admin_area/edit_products.php
-    - edit php codes in this file --> so that the table dynamically shows; the data stored in the database
-
-# part-67
-## section-01
-    - go to the --> admin_area/edit_products.php
-    - write php codes in this page --> so that the newly given data is stored in the database
-
-# part-68
-## section-01
-    - go to the --> admin_area/delete_products.php
-    - write simple php codes here --> so that the admin can delete any product from the database
-
-# part-69
-## section-01
-    - go to the --> admin_area/view_categories.php
-    - write php codes --> to display all the "categories" in this page
-## section-02
-    - go to the --> admin_area/view_brands.php
-    - write php codes --> to display all the "brands" in this page
-
-# part-70
-## section-01
-    - go to the --> admin_area/edit_category.php
-    - write php codes in this file --> so that admin can edit their "category" names
-## section-02
-    - go to the --> admin_area/edit_brand.php
-    - write php codes in this file --> so that admin can edit their "brand" names
-
-# part-71
-## section-01
-    - go to the --> admin_area/delete_category.php
-    - write simple php codes here --> so that when admin clicks on the "delete" option it removes the category
-## section-02
-    - go to the --> admin_area/delete_brand.php
-    - write simple php codes here --> so that when admin clicks on the "delete" option it removes the brand
-
-# part-72
-## section-01
-    - go to the --> "admin_area/view_brands.php"
-    - add the bootstrap modal option --> for displaying "Confirmation" message before deleting
-    
-# part-73
-## section-01
-    - go to the --> admin_area/all_orders.php
-    - write php codes for the --> displaying all orders to the admin dashboard
-    - create a new file --> admin_area/delete_order.php
-    - include this to the --> admin_area\index.php
-
-# part-74
-## section-01
-    - go to the --> admin_area/all_payments.php
-    - write php codes for the --> displaying all payments to the admin dashboard
-    - create a new file --> admin_area/delete_payment.php
-    - include this to the --> admin_area\index.php
-
-# part-75
-## section-01
-    - go to the --> admin_area/all_users.php
-    - write php codes for the --> displaying all users to the admin dashboard
-    - create a new file --> admin_area/delete_user.php
-    - include this to the --> admin_area\index.php
-
-# part-76
-## section-01
-    - create two new files --> "admin_area/admin_registration.php" and "admin_area/admin_login.php"
-    - design the basic layout for the --> "Admin Registration" and "Admin Layout" page
-
-# part-77
-## section-01
-    - create a new table --> admin_table
-    - create a new column --> admin_id [int, primary, auto increment]
-    - create a new column --> admin_name [varchar, 255]
-    - create a new column --> admin_email [varchar, 255]
-    - create a new column --> admin_password [varchar, 255]
-
-# part-78
-## section-01
-    - hosting website for free in "infinity free" or "000webhost"
-    - END
+# E-Commerce Web Application
+
+> ### Muzahidur Rahman Saim
+
+> ##### Database Management System
+
+---
+## Table of Contents
+
+1. Introduction
+2. Objectives
+3. Technologies Used
+4. System Overview
+5. Project Structure
+6. Database Design
+7. Key Functional Modules
+8. Code Highlights
+9. Security Measures
+10. Testing and Validation
+11. Challenges Faced
+12. Future Scope
+13. Conclusion
+
+## Introduction
+
+This project is a dynamic e-commerce web application built using PHP, MySQL, Bootstrap, and HTML/CSS. It enables 
+users to browse products, manage carts, place orders, and make payments, while administrators can manage inventory, 
+users, and transactions.
+
+## Objectives
+➢ Develop a modular and scalable e-commerce platform
+
+➢ Implement secure user and admin authentication
+
+➢ Enable dynamic product and category management
+
+➢ Ensure responsive design across devices
+
+➢ Maintain normalized and efficient database schema
+
+## Technologies Used
+
+| Technology | Purpose                                 |
+|------------|-----------------------------------------|
+| PHP        | Backend logic and server-side scripting |
+| MySQL      | Relational database management          |
+| Bootstrap  | Responsive UI design                    |
+| HTML/CSS   | Frontend structure and styling          |
+| JavaScript | Client-side interactivity               |
+
+## System Overview
+
+➢ **User Roles**: Admin and Customer
+
+➢ **Frontend**: HTML, CSS, Bootstrap
+
+➢ **Backend**: PHP with modular includes and functions
+
+➢ **Database**: MySQL with normalized tables
+
+➢ **Security**: Password hashing, session management
+
+## Project Structure
+
+Ecommerce_Website/
+
+├── admin_area/           → Admin dashboard and controls
+
+├── users_area/           → User registration, login, profile
+
+├── functions/             → Common reusable PHP functions
+
+├── includes/              → DB connection and footer
+
+├── cart.php               → Cart logic and display
+
+├── index.php             → Homepage
+
+├── display_all.php       → Product listing
+
+├── product_details.php → Product detail view
+
+├── search_product.php  → Search functionality
+
+├── style.css               → Global styling
+
+
+## Database Design
+
+| Table Name     | Description                   |
+|----------------|-------------------------------|
+| admin_table    | Admin credentials and profile |
+| user_table     | User credentials and profile  |
+| products       | Product details and images    |
+| brands         | Brand metadata                |
+| categories     | Product categories            |
+| cart_details   | Temporary cart items          |
+| user_orders    | Finalized orders              |
+| orders_pending | Orders awaiting confirmation  |
+| user_payments  | Payment records               |
+
+## Key Functional Modules
+
+> Admin Panel
+
+➢ Login/Logout/Registration
+
+➢ Insert/Edit/Delete Products, Brands, Categories
+
+➢ View/Delete Orders, Payments, Users
+
+> User Side
+
+➢ Registration/Login/Profile Management
+
+➢ Product Browsing and Search
+
+➢ Cart Management and Checkout
+
+➢ Order History and Payment Confirmation
+
+## Code Highlights
+
+➢ **Modular Includes**: connect.php, common_function.php,
+
+footer.php
+
+➢ **Reusable Functions**: getProducts(), cartItems(),
+
+cartTotalPrice()
+
+➢ **Secure Auth**: password_hash() and password_verify()
+
+➢ **Dynamic UI**: Bootstrap cards, modals, and responsive tables
+
+➢ **Session Handling**: Role-based access and redirects
+
+## Security Measures
+
+➢ Passwords stored using password_hash()
+
+➢ Login verification with password_verify()
+
+➢ Session-based access control for admin and users
+
+➢ Input validation and SQL query sanitization
+
+## Testing and Validation
+
+➢ Manual testing of all modules
+
+➢ SQL query validation
+
+➢ UI responsiveness across devices
+
+➢ Edge case handling (empty cart, invalid login, duplicate
+
+entries)
+
+## Challenges Faced
+
+➢ Ensuring modularity and reusability in PHP
+
+➢ Handling session timeouts and redirects
+
+➢ Designing a normalized yet flexible schema
+
+➢ Responsive UI across screen sizes and browsers
+
+## Future Scope
+
+➢  Integrate payment gateway (Stripe, PayPal)
+
+➢  Add product reviews and ratings
+
+➢  Implement RESTful API for mobile apps
+
+➢  Enhance security with CSRF tokens and CAPTCHA
+
+➢  Add analytics dashboard for admin
+
+## Conclusion
+
+This project demonstrates a complete e-commerce workflow with robust backend logic, secure authentication, and 
+responsive design. It reflects practical application of web development principles and database design, making it 
+suitable for real-world deployment and academic evaluation.
